@@ -8,14 +8,15 @@
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
      
-<img src="images/banner.jpg" alt="YKS Puan Hesaplama"
-     style="max-width:100%; border-radius:12px; margin:20px 0;">
 
 
 <body class="bg-gray-100 p-6">
 <div class="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow">
 
 <h1 class="text-2xl font-bold text-center mb-6">YKS Net & Puan Hesaplama</h1>
+<img src="images/banner.jpg"
+     alt="YKS Net ve Puan Hesaplama"
+     class="w-full rounded-xl mb-6">
 
 <!-- TYT -->
 <h2 class="text-xl font-semibold mb-2">TYT</h2>
