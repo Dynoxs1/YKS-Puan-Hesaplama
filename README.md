@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -17,9 +18,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-gray-100 p-6">
+<body class="bg-gray-100 p-4 sm:p-6">
 
-<div class="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow">
+<div class="max-w-full sm:max-w-2xl mx-auto bg-white p-4 sm:p-6 rounded-xl shadow">
 
   <h1 class="text-2xl font-bold text-center mb-6">YKS Net & Puan Hesaplama</h1>
 
@@ -27,7 +28,7 @@
 
   <!-- TYT -->
   <h2 class="text-xl font-semibold mb-2">TYT</h2>
-  <div class="grid grid-cols-3 gap-2 mb-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mb-4">
     <span>Ders</span><span>Doğru</span><span>Yanlış</span>
 
     <span>Türkçe</span>
@@ -49,7 +50,7 @@
 
   <!-- AYT -->
   <h2 class="text-xl font-semibold mb-2">AYT</h2>
-  <div class="grid grid-cols-3 gap-2 mb-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mb-4">
     <span>Matematik</span>
     <input id="ayt_m_d" type="number" class="border p-1">
     <input id="ayt_m_y" type="number" class="border p-1">
@@ -119,7 +120,7 @@ function hesapla() {
 </script>
 
 <hr>
-<footer style="text-align:center; margin:20px 0;">
+<footer class="text-center mt-6 mb-6">
   <a href="hakkimizda.html">Hakkımızda</a> |
   <a href="gizlilik.html">Gizlilik Politikası</a> |
   <a href="iletisim.html">İletişim</a>
