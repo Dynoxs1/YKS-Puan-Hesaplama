@@ -3,17 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google Search Console Doğrulama -->
-  <meta name="google-site-verification" content="8px4ptCkSDsTG0QElNpXCS4McjaAd4RbFuTWkZKxn4Y" />
-
-  <!-- SEO Başlık ve Açıklama -->
+  
   <title>YKS Net ve Puan Hesaplama | TYT AYT Puan Hesaplama 2026</title>
   <meta name="description" content="YKS 2026 TYT ve AYT net hesaplama aracı. Doğru yanlış girerek netini ve tahmini puanını hemen öğren. Ücretsiz YKS puan hesaplama sitesi.">
   <meta name="keywords" content="YKS puan hesaplama, TYT net hesaplama, AYT net hesaplama, YKS 2026">
-  <meta name="robots" content="index, follow">
 
-  <!-- Kütüphaneler -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -29,44 +23,56 @@
 
   <!-- TYT -->
   <h2 class="text-xl font-semibold mb-2">TYT</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mb-4">
-    <span>Ders</span><span>Doğru</span><span>Yanlış</span>
 
-    <span>Türkçe</span>
-    <input id="t_dogru" type="number" class="border p-1">
-    <input id="t_yanlis" type="number" class="border p-1">
+  <div class="flex flex-wrap items-center gap-2 mb-2">
+    <span class="w-1/3 font-semibold">Türkçe</span>
+    <input id="t_dogru" type="number" placeholder="Doğru" class="w-1/3 border p-1">
+    <input id="t_yanlis" type="number" placeholder="Yanlış" class="w-1/3 border p-1">
+  </div>
 
-    <span>Matematik</span>
-    <input id="m_dogru" type="number" class="border p-1">
-    <input id="m_yanlis" type="border p-1">
+  <div class="flex flex-wrap items-center gap-2 mb-2">
+    <span class="w-1/3 font-semibold">Matematik</span>
+    <input id="m_dogru" type="number" placeholder="Doğru" class="w-1/3 border p-1">
+    <input id="m_yanlis" type="number" placeholder="Yanlış" class="w-1/3 border p-1">
+  </div>
 
-    <span>Sosyal</span>
-    <input id="s_dogru" type="number" class="border p-1">
-    <input id="s_yanlis" type="number" class="border p-1">
+  <div class="flex flex-wrap items-center gap-2 mb-2">
+    <span class="w-1/3 font-semibold">Sosyal</span>
+    <input id="s_dogru" type="number" placeholder="Doğru" class="w-1/3 border p-1">
+    <input id="s_yanlis" type="number" placeholder="Yanlış" class="w-1/3 border p-1">
+  </div>
 
-    <span>Fen</span>
-    <input id="f_dogru" type="number" class="border p-1">
-    <input id="f_yanlis" type="number" class="border p-1">
+  <div class="flex flex-wrap items-center gap-2 mb-4">
+    <span class="w-1/3 font-semibold">Fen</span>
+    <input id="f_dogru" type="number" placeholder="Doğru" class="w-1/3 border p-1">
+    <input id="f_yanlis" type="number" placeholder="Yanlış" class="w-1/3 border p-1">
   </div>
 
   <!-- AYT -->
   <h2 class="text-xl font-semibold mb-2">AYT</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mb-4">
-    <span>Matematik</span>
-    <input id="ayt_m_d" type="number" class="border p-1">
-    <input id="ayt_m_y" type="number" class="border p-1">
 
-    <span>Edebiyat</span>
-    <input id="ayt_e_d" type="number" class="border p-1">
-    <input id="ayt_e_y" type="number" class="border p-1">
+  <div class="flex flex-wrap items-center gap-2 mb-2">
+    <span class="w-1/3 font-semibold">Matematik</span>
+    <input id="ayt_m_d" type="number" placeholder="Doğru" class="w-1/3 border p-1">
+    <input id="ayt_m_y" type="number" placeholder="Yanlış" class="w-1/3 border p-1">
+  </div>
 
-    <span>Sosyal</span>
-    <input id="ayt_s_d" type="number" class="border p-1">
-    <input id="ayt_s_y" type="number" class="border p-1">
+  <div class="flex flex-wrap items-center gap-2 mb-2">
+    <span class="w-1/3 font-semibold">Edebiyat</span>
+    <input id="ayt_e_d" type="number" placeholder="Doğru" class="w-1/3 border p-1">
+    <input id="ayt_e_y" type="number" placeholder="Yanlış" class="w-1/3 border p-1">
+  </div>
 
-    <span>Fen</span>
-    <input id="ayt_f_d" type="number" class="border p-1">
-    <input id="ayt_f_y" type="number" class="border p-1">
+  <div class="flex flex-wrap items-center gap-2 mb-2">
+    <span class="w-1/3 font-semibold">Sosyal</span>
+    <input id="ayt_s_d" type="number" placeholder="Doğru" class="w-1/3 border p-1">
+    <input id="ayt_s_y" type="number" placeholder="Yanlış" class="w-1/3 border p-1">
+  </div>
+
+  <div class="flex flex-wrap items-center gap-2 mb-4">
+    <span class="w-1/3 font-semibold">Fen</span>
+    <input id="ayt_f_d" type="number" placeholder="Doğru" class="w-1/3 border p-1">
+    <input id="ayt_f_y" type="number" placeholder="Yanlış" class="w-1/3 border p-1">
   </div>
 
   <label class="block mb-3">Diploma Notu:
@@ -81,9 +87,7 @@
 </div>
 
 <script>
-function net(d, y) {
-  return d - (y / 4);
-}
+function net(d, y) { return d - (y / 4); }
 
 function hesapla() {
   const tytNet = net(t_dogru.value, t_yanlis.value) +
