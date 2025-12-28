@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -18,13 +17,15 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-gray-100 p-4 sm:p-6">
+<body class="bg-gray-100 p-2 sm:p-6">
 
-<div class="max-w-full sm:max-w-2xl mx-auto bg-white p-4 sm:p-6 rounded-xl shadow">
+<div class="max-w-full sm:max-w-2xl mx-auto bg-white p-2 sm:p-6 rounded-xl shadow">
 
   <h1 class="text-2xl font-bold text-center mb-6">YKS Net & Puan Hesaplama</h1>
 
-  <img src="images/banner.jpg" alt="YKS Net ve Puan Hesaplama" class="w-full rounded-xl mb-6">
+  <img src="images/banner.jpg" 
+       alt="YKS Net ve Puan Hesaplama" 
+       class="w-full h-auto max-h-80 sm:max-h-96 md:max-h-[400px] rounded-xl mb-6 object-cover">
 
   <!-- TYT -->
   <h2 class="text-xl font-semibold mb-2">TYT</h2>
@@ -37,7 +38,7 @@
 
     <span>Matematik</span>
     <input id="m_dogru" type="number" class="border p-1">
-    <input id="m_yanlis" type="number" class="border p-1">
+    <input id="m_yanlis" type="border p-1">
 
     <span>Sosyal</span>
     <input id="s_dogru" type="number" class="border p-1">
