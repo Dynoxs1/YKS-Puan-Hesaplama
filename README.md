@@ -6,6 +6,7 @@
   <title>YKS Net ve Puan Hesaplama | TYT AYT Puan Hesaplama 2026</title>
   <meta name="description" content="YKS 2026 TYT ve AYT net hesaplama aracı. Doğru yanlış girerek netini ve tahmini puanını hemen öğren. Ücretsiz YKS puan hesaplama sitesi.">
   <meta name="keywords" content="YKS puan hesaplama, TYT net hesaplama, AYT net hesaplama, YKS 2026">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -99,6 +100,21 @@
   <div id="sonuc" class="mt-4 font-semibold text-center"></div>
   <canvas id="grafik" class="mt-6"></canvas>
 
+  <!-- Net & Puan Kartları -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+    <div class="bg-blue-100 p-4 rounded-xl shadow-lg transform transition hover:scale-105">
+      <h3 class="text-lg font-semibold text-center">TYT</h3>
+      <p class="text-center mt-2">Net: <span id="kartTytNet">0</span></p>
+      <p class="text-center">Puan: <span id="kartTytPuan">0</span></p>
+    </div>
+
+    <div class="bg-green-100 p-4 rounded-xl shadow-lg transform transition hover:scale-105">
+      <h3 class="text-lg font-semibold text-center">AYT</h3>
+      <p class="text-center mt-2">Net: <span id="kartAytNet">0</span></p>
+      <p class="text-center">Puan: <span id="kartAytPuan">0</span></p>
+    </div>
+  </div>
+
 </div>
 
 <script>
@@ -136,6 +152,12 @@ function hesapla() {
       datasets: [{ label: "Puan", data: [tytPuan, aytPuan] }]
     }
   });
+
+  // Kartları güncelle
+  document.getElementById("kartTytNet").textContent = tytNet.toFixed(2);
+  document.getElementById("kartTytPuan").textContent = tytPuan.toFixed(2);
+  document.getElementById("kartAytNet").textContent = aytNet.toFixed(2);
+  document.getElementById("kartAytPuan").textContent = aytPuan.toFixed(2);
 }
 </script>
 
