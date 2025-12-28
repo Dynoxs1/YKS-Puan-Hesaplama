@@ -16,9 +16,6 @@
 </head>
 <body class="bg-gray-100 p-6">
   
-</body>
-</html>
-
 </html>
 <div class="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow">
 
