@@ -3,40 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YKS Net ve Puan Hesaplama | TYT AYT Puan Hesaplama 2026</title>
+  <title>YKS Net ve Puan Hesaplama | TYT AYT 2026</title>
   <meta name="description" content="YKS 2026 TYT ve AYT net hesaplama aracı. Doğru yanlış girerek netini ve tahmini puanını hemen öğren. Ücretsiz YKS puan hesaplama sitesi.">
-  <meta name="keywords" content="YKS puan hesaplama, TYT net hesaplama, AYT net hesaplama, YKS 2026">
 
   <!-- Tailwind & Chart.js -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <!-- Özel stil -->
   <style>
-    /* Kart stili */
-    .card {
-      background: #ffffff;
-      border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    /* Input focus efekti */
-    input:focus {
-      outline: none;
-      border-color: #3b82f6;
-      box-shadow: 0 0 5px rgba(59,130,246,0.5);
-    }
-    /* Buton hover efekti */
-    button:hover {
-      box-shadow: 0 4px 12px rgba(59,130,246,0.4);
-    }
-    /* Başlık gradient */
-    h1 {
-      background: linear-gradient(90deg, #3b82f6, #06b6d4);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    .card { background:#fff; border-radius:1rem; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:1rem; margin-bottom:1.5rem; }
+    input:focus { outline:none; border-color:#3b82f6; box-shadow:0 0 5px rgba(59,130,246,0.5); }
+    button:hover { box-shadow:0 4px 12px rgba(59,130,246,0.4); }
+    h1 { background: linear-gradient(90deg, #3b82f6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   </style>
 </head>
 <body class="bg-gray-100 p-0 sm:p-6">
@@ -70,11 +48,7 @@
     <h2 class="text-2xl sm:text-3xl font-semibold mb-2">TYT</h2>
     <table class="w-full border border-gray-300 rounded-lg text-lg">
       <thead class="bg-gray-100">
-        <tr>
-          <th class="p-3 border">Ders</th>
-          <th class="p-3 border">Doğru</th>
-          <th class="p-3 border">Yanlış</th>
-        </tr>
+        <tr><th class="p-3 border">Ders</th><th class="p-3 border">Doğru</th><th class="p-3 border">Yanlış</th></tr>
       </thead>
       <tbody>
         <tr class="hover:bg-gray-50">
@@ -106,11 +80,7 @@
     <h2 class="text-2xl sm:text-3xl font-semibold mb-2">AYT</h2>
     <table class="w-full border border-gray-300 rounded-lg text-lg">
       <thead class="bg-gray-100">
-        <tr>
-          <th class="p-3 border">Ders</th>
-          <th class="p-3 border">Doğru</th>
-          <th class="p-3 border">Yanlış</th>
-        </tr>
+        <tr><th class="p-3 border">Ders</th><th class="p-3 border">Doğru</th><th class="p-3 border">Yanlış</th></tr>
       </thead>
       <tbody>
         <tr class="hover:bg-gray-50">
@@ -159,41 +129,17 @@
 
 <script>
 function net(d, y) { return d - (y / 4); }
-
 function hesapla() {
-  const tytNet = net(t_dogru.value, t_yanlis.value) +
-                 net(m_dogru.value, m_yanlis.value) +
-                 net(s_dogru.value, s_yanlis.value) +
-                 net(f_dogru.value, f_yanlis.value);
-
-  const aytNet = net(ayt_m_d.value, ayt_m_y.value) +
-                 net(ayt_e_d.value, ayt_e_y.value) +
-                 net(ayt_s_d.value, ayt_s_y.value) +
-                 net(ayt_f_d.value, ayt_f_y.value);
-
-  const diploma = Number(document.getElementById("diploma").value) || 0;
-
+  const tytNet = net(t_dogru.value, t_yanlis.value)+net(m_dogru.value, m_yanlis.value)+net(s_dogru.value, s_yanlis.value)+net(f_dogru.value, f_yanlis.value);
+  const aytNet = net(ayt_m_d.value, ayt_m_y.value)+net(ayt_e_d.value, ayt_e_y.value)+net(ayt_s_d.value, ayt_s_y.value)+net(ayt_f_d.value, ayt_f_y.value);
+  const diploma = Number(document.getElementById("diploma").value)||0;
   const tytPuan = 100 + tytNet * 4 + diploma * 0.12;
   const aytPuan = 100 + aytNet * 5 + diploma * 0.12;
-
-  document.getElementById("sonuc").innerHTML = `
-    TYT Net: ${tytNet.toFixed(2)} <br>
-    AYT Net: ${aytNet.toFixed(2)} <br><br>
-    TYT Puan: ${tytPuan.toFixed(2)} <br>
-    AYT Puan: ${aytPuan.toFixed(2)}
-  `;
-
+  document.getElementById("sonuc").innerHTML = `TYT Net: ${tytNet.toFixed(2)} <br>AYT Net: ${aytNet.toFixed(2)} <br><br>TYT Puan: ${tytPuan.toFixed(2)} <br>AYT Puan: ${aytPuan.toFixed(2)}`;
   const ctx = document.getElementById("grafik");
-  if (window.chart) window.chart.destroy();
-  window.chart = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: ["TYT", "AYT"],
-      datasets: [{ label: "Puan", data: [tytPuan, aytPuan] }]
-    }
-  });
+  if(window.chart) window.chart.destroy();
+  window.chart = new Chart(ctx,{type:"bar",data:{labels:["TYT","AYT"],datasets:[{label:"Puan",data:[tytPuan,aytPuan]}]}});
 }
 </script>
-
 </body>
 </html>
