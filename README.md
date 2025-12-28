@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Search Console Doğrulama -->
+  <meta name="google-site-verification" content="8px4ptCkSDsTG0QElNpXCS4McjaAd4RbFuTWkZKxn4Y" />
+
+  <!-- SEO Başlık ve Açıklama -->
+  <title>YKS Net ve Puan Hesaplama | TYT AYT Puan Hesaplama 2026</title>
+  <meta name="description" content="YKS 2026 TYT ve AYT net hesaplama aracı. Doğru yanlış girerek netini ve tahmini puanını hemen öğren. Ücretsiz YKS puan hesaplama sitesi.">
+  <meta name="keywords" content="YKS puan hesaplama, TYT net hesaplama, AYT net hesaplama, YKS 2026">
+
+  <!-- Kütüphaneler -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     
-<meta name="google-site-verification" content="8px4ptCkSDsTG0QElNpXCS4McjaAd4RbFuTWkZKxn4Y" />
      
 <title>YKS Net ve Puan Hesaplama</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
