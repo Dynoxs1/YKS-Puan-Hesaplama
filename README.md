@@ -14,123 +14,122 @@
 
 <div class="max-w-full sm:max-w-2xl mx-auto bg-white p-4 sm:p-6 rounded-xl shadow">
 
-  <h1 class="text-2xl font-bold text-center mb-6">YKS Net & Puan Hesaplama</h1>
-  <img src="images/banner.jpg" alt="YKS Net ve Puan Hesaplama" class="w-full h-auto max-h-80 sm:max-h-96 rounded-xl mb-6 object-cover">
+  <h1 class="text-3xl sm:text-4xl font-bold text-center mb-6">YKS Net & Puan Hesaplama</h1>
+  <img src="images/banner.jpg" alt="YKS Net ve Puan Hesaplama" class="w-full h-auto max-h-96 sm:max-h-[32rem] rounded-xl mb-6 object-cover">
 
   <!-- Hızlı Özellikler -->
   <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 mb-6 text-center">
-    <div class="p-4 bg-yellow-100 rounded-xl shadow-lg transform transition hover:scale-105">
-      <div class="text-4xl mb-2 animate-bounce">📝</div>
-      <h4 class="font-semibold">Kolay Net Girişi</h4>
-      <p class="text-sm mt-1">Doğru ve yanlışlarını hızlıca gir, netini öğren.</p>
+    <div class="p-6 sm:p-8 bg-yellow-100 rounded-xl shadow-lg transform transition hover:scale-105">
+      <div class="text-5xl sm:text-6xl mb-2 animate-bounce">📝</div>
+      <h4 class="font-semibold text-lg sm:text-xl">Kolay Net Girişi</h4>
+      <p class="text-sm sm:text-base mt-1">Doğru ve yanlışlarını hızlıca gir, netini öğren.</p>
     </div>
 
-    <div class="p-4 bg-green-100 rounded-xl shadow-lg transform transition hover:scale-105">
-      <div class="text-4xl mb-2 animate-bounce">📊</div>
-      <h4 class="font-semibold">Hızlı Puan Hesaplama</h4>
-      <p class="text-sm mt-1">TYT ve AYT tahmini puanını anında gör.</p>
+    <div class="p-6 sm:p-8 bg-green-100 rounded-xl shadow-lg transform transition hover:scale-105">
+      <div class="text-5xl sm:text-6xl mb-2 animate-bounce">📊</div>
+      <h4 class="font-semibold text-lg sm:text-xl">Hızlı Puan Hesaplama</h4>
+      <p class="text-sm sm:text-base mt-1">TYT ve AYT tahmini puanını anında gör.</p>
     </div>
 
-    <div class="p-4 bg-blue-100 rounded-xl shadow-lg transform transition hover:scale-105">
-      <div class="text-4xl mb-2 animate-bounce">📱</div>
-      <h4 class="font-semibold">Mobil Uyumlu</h4>
-      <p class="text-sm mt-1">Telefon ve bilgisayarda sorunsuz kullanım.</p>
+    <div class="p-6 sm:p-8 bg-blue-100 rounded-xl shadow-lg transform transition hover:scale-105">
+      <div class="text-5xl sm:text-6xl mb-2 animate-bounce">📱</div>
+      <h4 class="font-semibold text-lg sm:text-xl">Mobil Uyumlu</h4>
+      <p class="text-sm sm:text-base mt-1">Telefon ve bilgisayarda sorunsuz kullanım.</p>
     </div>
   </div>
 
   <!-- TYT Tablosu -->
-  <h2 class="text-xl font-semibold mb-2">TYT</h2>
+  <h2 class="text-2xl sm:text-3xl font-semibold mb-2">TYT</h2>
   <div class="overflow-x-auto mb-4">
-    <table class="w-full border border-gray-300 rounded-lg">
+    <table class="w-full border border-gray-300 rounded-lg text-lg">
       <thead class="bg-gray-100">
         <tr>
-          <th class="p-2 border">Ders</th>
-          <th class="p-2 border">Doğru</th>
-          <th class="p-2 border">Yanlış</th>
+          <th class="p-3 border">Ders</th>
+          <th class="p-3 border">Doğru</th>
+          <th class="p-3 border">Yanlış</th>
         </tr>
       </thead>
       <tbody>
         <tr class="hover:bg-gray-50">
-          <td class="p-2 border">Türkçe</td>
-          <td class="p-2 border"><input id="t_dogru" type="number" class="w-full border p-1 rounded"></td>
-          <td class="p-2 border"><input id="t_yanlis" type="number" class="w-full border p-1 rounded"></td>
+          <td class="p-2 sm:p-3 border">Türkçe</td>
+          <td class="p-2 sm:p-3 border"><input id="t_dogru" type="number" class="w-full border p-2 sm:p-3 rounded text-lg"></td>
+          <td class="p-2 sm:p-3 border"><input id="t_yanlis" type="number" class="w-full border p-2 sm:p-3 rounded text-lg"></td>
         </tr>
         <tr class="hover:bg-gray-50">
-          <td class="p-2 border">Matematik</td>
-          <td class="p-2 border"><input id="m_dogru" type="number" class="w-full border p-1 rounded"></td>
-          <td class="p-2 border"><input id="m_yanlis" type="number" class="w-full border p-1 rounded"></td>
+          <td class="p-2 sm:p-3 border">Matematik</td>
+          <td class="p-2 sm:p-3 border"><input id="m_dogru" type="number" class="w-full border p-2 sm:p-3 rounded text-lg"></td>
+          <td class="p-2 sm:p-3 border"><input id="m_yanlis" type="number" class="w-full border p-2 sm:p-3 rounded text-lg"></td>
         </tr>
         <tr class="hover:bg-gray-50">
-          <td class="p-2 border">Sosyal</td>
-          <td class="p-2 border"><input id="s_dogru" type="number" class="w-full border p-1 rounded"></td>
-          <td class="p-2 border"><input id="s_yanlis" type="number" class="w-full border p-1 rounded"></td>
+          <td class="p-2 sm:p-3 border">Sosyal</td>
+          <td class="p-2 sm:p-3 border"><input id="s_dogru" type="number" class="w-full border p-2 sm:p-3 rounded text-lg"></td>
+          <td class="p-2 sm:p-3 border"><input id="s_yanlis" type="number" class="w-full border p-2 sm:p-3 rounded text-lg"></td>
         </tr>
         <tr class="hover:bg-gray-50">
-          <td class="p-2 border">Fen</td>
-          <td class="p-2 border"><input id="f_dogru" type="number" class="w-full border p-1 rounded"></td>
-          <td class="p-2 border"><input id="f_yanlis" type="number" class="w-full border p-1 rounded"></td>
+          <td class="p-2 sm:p-3 border">Fen</td>
+          <td class="p-2 sm:p-3 border"><input id="f_dogru" type="number" class="w-full border p-2 sm:p-3 rounded text-lg"></td>
+          <td class="p-2 sm:p-3 border"><input id="f_yanlis" type="number" class="w-full border p-2 sm:p-3 rounded text-lg"></td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <!-- AYT Tablosu -->
-  <h2 class="text-xl font-semibold mb-2">AYT</h2>
+  <h2 class="text-2xl sm:text-3xl font-semibold mb-2">AYT</h2>
   <div class="overflow-x-auto mb-4">
-    <table class="w-full border border-gray-300 rounded-lg">
+    <table class="w-full border border-gray-300 rounded-lg text-lg">
       <thead class="bg-gray-100">
         <tr>
-          <th class="p-2 border">Ders</th>
-          <th class="p-2 border">Doğru</th>
-          <th class="p-2 border">Yanlış</th>
+          <th class="p-3 border">Ders</th>
+          <th class="p-3 border">Doğru</th>
+          <th class="p-3 border">Yanlış</th>
         </tr>
       </thead>
       <tbody>
         <tr class="hover:bg-gray-50">
-          <td class="p-2 border">Matematik</td>
-          <td class="p-2 border"><input id="ayt_m_d" type="number" class="w-full border p-1 rounded"></td>
-          <td class="p-2 border"><input id="ayt_m_y" type="number" class="w-full border p-1 rounded"></td>
+          <td class="p-2 sm:p-3 border">Matematik</td>
+          <td class="p-2 sm:p-3 border"><input id="ayt_m_d" type="number" class="w-full border p-2 sm:p-3 rounded text-lg"></td>
+          <td class="p-2 sm:p-3 border"><input id="ayt_m_y" type="number" class="w-full border p-2 sm:p-3 rounded text-lg"></td>
         </tr>
         <tr class="hover:bg-gray-50">
-          <td class="p-2 border">Edebiyat</td>
-          <td class="p-2 border"><input id="ayt_e_d" type="number" class="w-full border p-1 rounded"></td>
-          <td class="p-2 border"><input id="ayt_e_y" type="number" class="w-full border p-1 rounded"></td>
+          <td class="p-2 sm:p-3 border">Edebiyat</td>
+          <td class="p-2 sm:p-3 border"><input id="ayt_e_d" type="number" class="w-full border p-2 sm:p-3 rounded text-lg"></td>
+          <td class="p-2 sm:p-3 border"><input id="ayt_e_y" type="number" class="w-full border p-2 sm:p-3 rounded text-lg"></td>
         </tr>
         <tr class="hover:bg-gray-50">
-          <td class="p-2 border">Sosyal</td>
-          <td class="p-2 border"><input id="ayt_s_d" type="number" class="w-full border p-1 rounded"></td>
-          <td class="p-2 border"><input id="ayt_s_y" type="number" class="w-full border p-1 rounded"></td>
+          <td class="p-2 sm:p-3 border">Sosyal</td>
+          <td class="p-2 sm:p-3 border"><input id="ayt_s_d" type="number" class="w-full border p-2 sm:p-3 rounded text-lg"></td>
+          <td class="p-2 sm:p-3 border"><input id="ayt_s_y" type="number" class="w-full border p-2 sm:p-3 rounded text-lg"></td>
         </tr>
         <tr class="hover:bg-gray-50">
-          <td class="p-2 border">Fen</td>
-          <td class="p-2 border"><input id="ayt_f_d" type="number" class="w-full border p-1 rounded"></td>
-          <td class="p-2 border"><input id="ayt_f_y" type="number" class="w-full border p-1 rounded"></td>
+          <td class="p-2 sm:p-3 border">Fen</td>
+          <td class="p-2 sm:p-3 border"><input id="ayt_f_d" type="number" class="w-full border p-2 sm:p-3 rounded text-lg"></td>
+          <td class="p-2 sm:p-3 border"><input id="ayt_f_y" type="number" class="w-full border p-2 sm:p-3 rounded text-lg"></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <label class="block mt-4 mb-3">Diploma Notu:
-    <input id="diploma" type="number" class="border p-2 w-full rounded">
+  <label class="block mt-4 mb-3 text-lg">Diploma Notu:
+    <input id="diploma" type="number" class="border p-3 w-full rounded text-lg">
   </label>
 
-  <button onclick="hesapla()" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition">
+  <button onclick="hesapla()" class="w-full bg-blue-600 text-white p-3 sm:p-4 rounded hover:bg-blue-700 transition text-lg sm:text-xl">
     Hesapla
   </button>
 
-  <div id="sonuc" class="mt-4 font-semibold text-center"></div>
+  <div id="sonuc" class="mt-4 font-semibold text-center text-lg"></div>
   <canvas id="grafik" class="mt-6"></canvas>
 
-  <!-- Net & Puan Kartları -->
+  <!-- Kartlar -->
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-    <div class="bg-blue-100 p-4 rounded-xl shadow-lg transform transition hover:scale-105">
-      <h3 class="text-lg font-semibold text-center">TYT</h3>
+    <div class="bg-blue-100 p-6 sm:p-8 rounded-xl shadow-lg transform transition hover:scale-105 text-lg sm:text-xl">
+      <h3 class="text-lg sm:text-2xl font-semibold text-center">TYT</h3>
       <p class="text-center mt-2">Net: <span id="kartTytNet">0</span></p>
       <p class="text-center">Puan: <span id="kartTytPuan">0</span></p>
     </div>
-
-    <div class="bg-green-100 p-4 rounded-xl shadow-lg transform transition hover:scale-105">
-      <h3 class="text-lg font-semibold text-center">AYT</h3>
+    <div class="bg-green-100 p-6 sm:p-8 rounded-xl shadow-lg transform transition hover:scale-105 text-lg sm:text-xl">
+      <h3 class="text-lg sm:text-2xl font-semibold text-center">AYT</h3>
       <p class="text-center mt-2">Net: <span id="kartAytNet">0</span></p>
       <p class="text-center">Puan: <span id="kartAytPuan">0</span></p>
     </div>
@@ -174,7 +173,6 @@ function hesapla() {
     }
   });
 
-  // Kartları güncelle
   document.getElementById("kartTytNet").textContent = tytNet.toFixed(2);
   document.getElementById("kartTytPuan").textContent = tytPuan.toFixed(2);
   document.getElementById("kartAytNet").textContent = aytNet.toFixed(2);
