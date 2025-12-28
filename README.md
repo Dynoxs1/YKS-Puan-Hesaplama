@@ -3,83 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <title>YKS Net ve Puan Hesaplama | TYT AYT Puan Hesaplama 2026</title>
   <meta name="description" content="YKS 2026 TYT ve AYT net hesaplama aracı. Doğru yanlış girerek netini ve tahmini puanını hemen öğren. Ücretsiz YKS puan hesaplama sitesi.">
   <meta name="keywords" content="YKS puan hesaplama, TYT net hesaplama, AYT net hesaplama, YKS 2026">
-
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-gray-100 p-2 sm:p-6">
+<body class="bg-gray-100 p-4 sm:p-6">
 
-<div class="max-w-full sm:max-w-2xl mx-auto bg-white p-2 sm:p-6 rounded-xl shadow">
+<div class="max-w-full sm:max-w-2xl mx-auto bg-white p-4 sm:p-6 rounded-xl shadow">
 
   <h1 class="text-2xl font-bold text-center mb-6">YKS Net & Puan Hesaplama</h1>
+  <img src="images/banner.jpg" alt="YKS Net ve Puan Hesaplama" class="w-full h-auto max-h-80 sm:max-h-96 rounded-xl mb-6 object-cover">
 
-  <img src="images/banner.jpg" 
-       alt="YKS Net ve Puan Hesaplama" 
-       class="w-full h-auto max-h-80 sm:max-h-96 md:max-h-[400px] rounded-xl mb-6 object-cover">
-
-  <!-- TYT -->
+  <!-- TYT Tablosu -->
   <h2 class="text-xl font-semibold mb-2">TYT</h2>
-
-  <div class="flex flex-wrap items-center gap-2 mb-2">
-    <span class="w-1/3 font-semibold">Türkçe</span>
-    <input id="t_dogru" type="number" placeholder="Doğru" class="w-1/3 border p-1">
-    <input id="t_yanlis" type="number" placeholder="Yanlış" class="w-1/3 border p-1">
+  <div class="overflow-x-auto mb-4">
+    <table class="w-full border border-gray-300 rounded-lg">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="p-2 border">Ders</th>
+          <th class="p-2 border">Doğru</th>
+          <th class="p-2 border">Yanlış</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hover:bg-gray-50">
+          <td class="p-2 border">Türkçe</td>
+          <td class="p-2 border"><input id="t_dogru" type="number" class="w-full border p-1 rounded"></td>
+          <td class="p-2 border"><input id="t_yanlis" type="number" class="w-full border p-1 rounded"></td>
+        </tr>
+        <tr class="hover:bg-gray-50">
+          <td class="p-2 border">Matematik</td>
+          <td class="p-2 border"><input id="m_dogru" type="number" class="w-full border p-1 rounded"></td>
+          <td class="p-2 border"><input id="m_yanlis" type="number" class="w-full border p-1 rounded"></td>
+        </tr>
+        <tr class="hover:bg-gray-50">
+          <td class="p-2 border">Sosyal</td>
+          <td class="p-2 border"><input id="s_dogru" type="number" class="w-full border p-1 rounded"></td>
+          <td class="p-2 border"><input id="s_yanlis" type="number" class="w-full border p-1 rounded"></td>
+        </tr>
+        <tr class="hover:bg-gray-50">
+          <td class="p-2 border">Fen</td>
+          <td class="p-2 border"><input id="f_dogru" type="number" class="w-full border p-1 rounded"></td>
+          <td class="p-2 border"><input id="f_yanlis" type="number" class="w-full border p-1 rounded"></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <div class="flex flex-wrap items-center gap-2 mb-2">
-    <span class="w-1/3 font-semibold">Matematik</span>
-    <input id="m_dogru" type="number" placeholder="Doğru" class="w-1/3 border p-1">
-    <input id="m_yanlis" type="number" placeholder="Yanlış" class="w-1/3 border p-1">
-  </div>
-
-  <div class="flex flex-wrap items-center gap-2 mb-2">
-    <span class="w-1/3 font-semibold">Sosyal</span>
-    <input id="s_dogru" type="number" placeholder="Doğru" class="w-1/3 border p-1">
-    <input id="s_yanlis" type="number" placeholder="Yanlış" class="w-1/3 border p-1">
-  </div>
-
-  <div class="flex flex-wrap items-center gap-2 mb-4">
-    <span class="w-1/3 font-semibold">Fen</span>
-    <input id="f_dogru" type="number" placeholder="Doğru" class="w-1/3 border p-1">
-    <input id="f_yanlis" type="number" placeholder="Yanlış" class="w-1/3 border p-1">
-  </div>
-
-  <!-- AYT -->
+  <!-- AYT Tablosu -->
   <h2 class="text-xl font-semibold mb-2">AYT</h2>
-
-  <div class="flex flex-wrap items-center gap-2 mb-2">
-    <span class="w-1/3 font-semibold">Matematik</span>
-    <input id="ayt_m_d" type="number" placeholder="Doğru" class="w-1/3 border p-1">
-    <input id="ayt_m_y" type="number" placeholder="Yanlış" class="w-1/3 border p-1">
+  <div class="overflow-x-auto mb-4">
+    <table class="w-full border border-gray-300 rounded-lg">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="p-2 border">Ders</th>
+          <th class="p-2 border">Doğru</th>
+          <th class="p-2 border">Yanlış</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hover:bg-gray-50">
+          <td class="p-2 border">Matematik</td>
+          <td class="p-2 border"><input id="ayt_m_d" type="number" class="w-full border p-1 rounded"></td>
+          <td class="p-2 border"><input id="ayt_m_y" type="number" class="w-full border p-1 rounded"></td>
+        </tr>
+        <tr class="hover:bg-gray-50">
+          <td class="p-2 border">Edebiyat</td>
+          <td class="p-2 border"><input id="ayt_e_d" type="number" class="w-full border p-1 rounded"></td>
+          <td class="p-2 border"><input id="ayt_e_y" type="number" class="w-full border p-1 rounded"></td>
+        </tr>
+        <tr class="hover:bg-gray-50">
+          <td class="p-2 border">Sosyal</td>
+          <td class="p-2 border"><input id="ayt_s_d" type="number" class="w-full border p-1 rounded"></td>
+          <td class="p-2 border"><input id="ayt_s_y" type="number" class="w-full border p-1 rounded"></td>
+        </tr>
+        <tr class="hover:bg-gray-50">
+          <td class="p-2 border">Fen</td>
+          <td class="p-2 border"><input id="ayt_f_d" type="number" class="w-full border p-1 rounded"></td>
+          <td class="p-2 border"><input id="ayt_f_y" type="number" class="w-full border p-1 rounded"></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <div class="flex flex-wrap items-center gap-2 mb-2">
-    <span class="w-1/3 font-semibold">Edebiyat</span>
-    <input id="ayt_e_d" type="number" placeholder="Doğru" class="w-1/3 border p-1">
-    <input id="ayt_e_y" type="number" placeholder="Yanlış" class="w-1/3 border p-1">
-  </div>
-
-  <div class="flex flex-wrap items-center gap-2 mb-2">
-    <span class="w-1/3 font-semibold">Sosyal</span>
-    <input id="ayt_s_d" type="number" placeholder="Doğru" class="w-1/3 border p-1">
-    <input id="ayt_s_y" type="number" placeholder="Yanlış" class="w-1/3 border p-1">
-  </div>
-
-  <div class="flex flex-wrap items-center gap-2 mb-4">
-    <span class="w-1/3 font-semibold">Fen</span>
-    <input id="ayt_f_d" type="number" placeholder="Doğru" class="w-1/3 border p-1">
-    <input id="ayt_f_y" type="number" placeholder="Yanlış" class="w-1/3 border p-1">
-  </div>
-
-  <label class="block mb-3">Diploma Notu:
-    <input id="diploma" type="number" class="border p-1 w-full">
+  <label class="block mt-4 mb-3">Diploma Notu:
+    <input id="diploma" type="number" class="border p-2 w-full rounded">
   </label>
 
-  <button onclick="hesapla()" class="w-full bg-blue-600 text-white p-2 rounded">Hesapla</button>
+  <button onclick="hesapla()" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition">
+    Hesapla
+  </button>
 
   <div id="sonuc" class="mt-4 font-semibold text-center"></div>
   <canvas id="grafik" class="mt-6"></canvas>
