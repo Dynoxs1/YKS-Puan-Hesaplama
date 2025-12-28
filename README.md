@@ -15,7 +15,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 p-6">
-
+</html>
 <div class="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow">
 
 <h1 class="text-2xl font-bold text-center mb-6">YKS Net & Puan Hesaplama</h1>
