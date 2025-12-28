@@ -17,6 +17,27 @@
   <h1 class="text-2xl font-bold text-center mb-6">YKS Net & Puan Hesaplama</h1>
   <img src="images/banner.jpg" alt="YKS Net ve Puan Hesaplama" class="w-full h-auto max-h-80 sm:max-h-96 rounded-xl mb-6 object-cover">
 
+  <!-- Hızlı Özellikler -->
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 mb-6 text-center">
+    <div class="p-4 bg-yellow-100 rounded-xl shadow-lg transform transition hover:scale-105">
+      <div class="text-4xl mb-2 animate-bounce">📝</div>
+      <h4 class="font-semibold">Kolay Net Girişi</h4>
+      <p class="text-sm mt-1">Doğru ve yanlışlarını hızlıca gir, netini öğren.</p>
+    </div>
+
+    <div class="p-4 bg-green-100 rounded-xl shadow-lg transform transition hover:scale-105">
+      <div class="text-4xl mb-2 animate-bounce">📊</div>
+      <h4 class="font-semibold">Hızlı Puan Hesaplama</h4>
+      <p class="text-sm mt-1">TYT ve AYT tahmini puanını anında gör.</p>
+    </div>
+
+    <div class="p-4 bg-blue-100 rounded-xl shadow-lg transform transition hover:scale-105">
+      <div class="text-4xl mb-2 animate-bounce">📱</div>
+      <h4 class="font-semibold">Mobil Uyumlu</h4>
+      <p class="text-sm mt-1">Telefon ve bilgisayarda sorunsuz kullanım.</p>
+    </div>
+  </div>
+
   <!-- TYT Tablosu -->
   <h2 class="text-xl font-semibold mb-2">TYT</h2>
   <div class="overflow-x-auto mb-4">
