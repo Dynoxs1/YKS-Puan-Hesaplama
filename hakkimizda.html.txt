@@ -1,0 +1,6 @@
+<hr>
+<footer style="text-align:center; margin:20px 0;">
+  <a href="hakkimizda.html">Hakkımızda</a> |
+  <a href="gizlilik.html">Gizlilik Politikası</a> |
+  <a href="iletisim.html">İletişim</a>
+</footer>
