@@ -119,3 +119,10 @@ function hesapla() {
 
 </body>
 </html>
+<hr>
+<footer style="text-align:center; margin-top:20px;">
+  <a href="hakkimizda.html">Hakkımızda</a> |
+  <a href="gizlilik.html">Gizlilik Politikası</a> |
+  <a href="iletisim.html">İletişim</a>
+</footer>
+
