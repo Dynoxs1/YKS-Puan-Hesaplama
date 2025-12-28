@@ -130,7 +130,9 @@ Amacımız; öğrencilerin doğru–yanlış sayılarını girerek netlerini ö�
 Sitemizde yer alan hesaplamalar bilgilendirme amaçlıdır. ÖSYM tarafından açıklanan resmi sonuçlar ile birebir aynı olmayabilir. Hesaplamalar, genel kabul görmüş katsayılara ve geçmiş yıllardaki sınav sistemine dayalı tahmini verilerdir.
 
 YKS sürecinde adaylara faydalı, sade ve erişilebilir bir araç sunmayı hedefliyoruz.
-  <a href="gizlilik.html">Gizlilik Politikası</a> |🔒 GİZLİLİK POLİTİKASI (ÇOK ÖNEMLİ – ADSENSE)
+ 
+  
+  <a href="gizlilik.html">Gizlilik Politikası</a> | 🔒 GİZLİLİK POLİTİKASI (ÇOK ÖNEMLİ – ADSENSE)
 
 Bu gizlilik politikası, YKS Puan Hesaplama web sitesini ziyaret eden kullanıcılar için geçerlidir.
 
@@ -156,6 +158,8 @@ Kullanıcılar, tarayıcı ayarlarından çerezleri devre dışı bırakabilir.
 Üçüncü Taraf Bağlantılar
 
 Sitemizde üçüncü taraf web sitelerine yönlendiren bağlantılar bulunabilir. Bu sitelerin gizlilik uygulamalarından sitemiz sorumlu değildir.
+ 
+  
   <a href="iletisim.html">İletişim</a>📞 İLETİŞİM
 
 Bizimle iletişime geçmek için aşağıdaki e-posta adresini kullanabilirsiniz:
@@ -164,6 +168,8 @@ Bizimle iletişime geçmek için aşağıdaki e-posta adresini kullanabilirsiniz
 
 Öneri, geri bildirim ve hata bildirimlerinizi memnuniyetle değerlendiriyoruz.
 </footer>
+
+
 ⚠️ YASAL UYARI / SORUMLULUK REDDİ
 
 Bu sitede yer alan TYT ve AYT puan hesaplamaları tahmini sonuçlar sunar.
