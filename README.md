@@ -10,37 +10,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-gray-100 p-4 sm:p-6">
+<body class="bg-gray-100 p-0 sm:p-6">
 
-<div class="max-w-full sm:max-w-2xl mx-auto bg-white p-4 sm:p-6 rounded-xl shadow">
+<div class="w-full sm:max-w-2xl mx-auto bg-white p-2 sm:p-6 rounded-xl shadow">
 
-  <h1 class="text-3xl sm:text-4xl font-bold text-center mb-6">YKS Net & Puan Hesaplama</h1>
-  <img src="images/banner.jpg" alt="YKS Net ve Puan Hesaplama" class="w-full h-auto max-h-96 sm:max-h-[32rem] rounded-xl mb-6 object-cover">
-
-  <!-- Hızlı Özellikler -->
-  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 mb-6 text-center">
-    <div class="p-6 sm:p-8 bg-yellow-100 rounded-xl shadow-lg transform transition hover:scale-105">
-      <div class="text-5xl sm:text-6xl mb-2 animate-bounce">📝</div>
-      <h4 class="font-semibold text-lg sm:text-xl">Kolay Net Girişi</h4>
-      <p class="text-sm sm:text-base mt-1">Doğru ve yanlışlarını hızlıca gir, netini öğren.</p>
-    </div>
-
-    <div class="p-6 sm:p-8 bg-green-100 rounded-xl shadow-lg transform transition hover:scale-105">
-      <div class="text-5xl sm:text-6xl mb-2 animate-bounce">📊</div>
-      <h4 class="font-semibold text-lg sm:text-xl">Hızlı Puan Hesaplama</h4>
-      <p class="text-sm sm:text-base mt-1">TYT ve AYT tahmini puanını anında gör.</p>
-    </div>
-
-    <div class="p-6 sm:p-8 bg-blue-100 rounded-xl shadow-lg transform transition hover:scale-105">
-      <div class="text-5xl sm:text-6xl mb-2 animate-bounce">📱</div>
-      <h4 class="font-semibold text-lg sm:text-xl">Mobil Uyumlu</h4>
-      <p class="text-sm sm:text-base mt-1">Telefon ve bilgisayarda sorunsuz kullanım.</p>
-    </div>
-  </div>
+  <!-- Başlık ve görsel -->
+  <h1 class="text-3xl sm:text-4xl font-bold text-center mb-4">YKS Net & Puan Hesaplama</h1>
+  <img src="images/banner.jpg" alt="YKS Net ve Puan Hesaplama" class="w-full h-auto rounded-xl mb-4 object-cover">
 
   <!-- TYT Tablosu -->
   <h2 class="text-2xl sm:text-3xl font-semibold mb-2">TYT</h2>
-  <div class="overflow-x-auto mb-4">
+  <div class="overflow-x-auto mb-4 w-full">
     <table class="w-full border border-gray-300 rounded-lg text-lg">
       <thead class="bg-gray-100">
         <tr>
@@ -76,7 +56,7 @@
 
   <!-- AYT Tablosu -->
   <h2 class="text-2xl sm:text-3xl font-semibold mb-2">AYT</h2>
-  <div class="overflow-x-auto mb-4">
+  <div class="overflow-x-auto mb-4 w-full">
     <table class="w-full border border-gray-300 rounded-lg text-lg">
       <thead class="bg-gray-100">
         <tr>
@@ -110,6 +90,7 @@
     </table>
   </div>
 
+  <!-- Diploma ve buton -->
   <label class="block mt-4 mb-3 text-lg">Diploma Notu:
     <input id="diploma" type="number" class="border p-3 w-full rounded text-lg">
   </label>
@@ -119,21 +100,7 @@
   </button>
 
   <div id="sonuc" class="mt-4 font-semibold text-center text-lg"></div>
-  <canvas id="grafik" class="mt-6"></canvas>
-
-  <!-- Kartlar -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-    <div class="bg-blue-100 p-6 sm:p-8 rounded-xl shadow-lg transform transition hover:scale-105 text-lg sm:text-xl">
-      <h3 class="text-lg sm:text-2xl font-semibold text-center">TYT</h3>
-      <p class="text-center mt-2">Net: <span id="kartTytNet">0</span></p>
-      <p class="text-center">Puan: <span id="kartTytPuan">0</span></p>
-    </div>
-    <div class="bg-green-100 p-6 sm:p-8 rounded-xl shadow-lg transform transition hover:scale-105 text-lg sm:text-xl">
-      <h3 class="text-lg sm:text-2xl font-semibold text-center">AYT</h3>
-      <p class="text-center mt-2">Net: <span id="kartAytNet">0</span></p>
-      <p class="text-center">Puan: <span id="kartAytPuan">0</span></p>
-    </div>
-  </div>
+  <canvas id="grafik" class="mt-6 w-full"></canvas>
 
 </div>
 
@@ -172,11 +139,6 @@ function hesapla() {
       datasets: [{ label: "Puan", data: [tytPuan, aytPuan] }]
     }
   });
-
-  document.getElementById("kartTytNet").textContent = tytNet.toFixed(2);
-  document.getElementById("kartTytPuan").textContent = tytPuan.toFixed(2);
-  document.getElementById("kartAytNet").textContent = aytNet.toFixed(2);
-  document.getElementById("kartAytPuan").textContent = aytPuan.toFixed(2);
 }
 </script>
 
