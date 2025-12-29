@@ -20,26 +20,33 @@
        class="w-full h-[45vh] sm:h-[55vh] object-contain">
 </div>
 
-<!-- 🔵 BANNER ALTİ ÖZELLİKLER -->
-<div class="max-w-4xl mx-auto mt-6 px-4">
-  <div class="grid grid-cols-3 gap-4 text-center">
+<!-- Banner altı animasyonlu kutular -->
+<div class="grid grid-cols-3 gap-4 my-8">
 
-    <div class="bg-white rounded-xl shadow p-4 transition transform hover:-translate-y-2 hover:shadow-xl">
-      <div class="text-4xl mb-2 animate-bounce">✍️</div>
-      <h3 class="font-semibold">Kolay Net Girişi</h3>
+  <div class="bg-white rounded-2xl shadow flex flex-col items-center justify-center
+              aspect-square text-center transition-transform duration-300 hover:-translate-y-2">
+    <div class="text-4xl mb-2">✍️</div>
+    <div class="font-semibold text-base md:text-lg leading-tight">
+      Kolay Net Girişi
     </div>
-
-    <div class="bg-white rounded-xl shadow p-4 transition transform hover:-translate-y-2 hover:shadow-xl">
-      <div class="text-4xl mb-2 animate-pulse">⚡</div>
-      <h3 class="font-semibold">Hızlı Puan Hesaplama</h3>
-    </div>
-
-    <div class="bg-white rounded-xl shadow p-4 transition transform hover:-translate-y-2 hover:shadow-xl">
-      <div class="text-4xl mb-2 animate-bounce">📱</div>
-      <h3 class="font-semibold">Mobil Uyumlu</h3>
-    </div>
-
   </div>
+
+  <div class="bg-white rounded-2xl shadow flex flex-col items-center justify-center
+              aspect-square text-center transition-transform duration-300 hover:-translate-y-2">
+    <div class="text-4xl mb-2">⚡</div>
+    <div class="font-semibold text-base md:text-lg leading-tight">
+      Hızlı Puan Hesaplama
+    </div>
+  </div>
+
+  <div class="bg-white rounded-2xl shadow flex flex-col items-center justify-center
+              aspect-square text-center transition-transform duration-300 hover:-translate-y-2">
+    <div class="text-4xl mb-2">📱</div>
+    <div class="font-semibold text-base md:text-lg leading-tight">
+      Mobil Uyumlu
+    </div>
+  </div>
+
 </div>
 
 <!-- 🔵 HESAPLAMA ALANI -->
