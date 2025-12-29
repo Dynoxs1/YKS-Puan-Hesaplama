@@ -12,8 +12,8 @@
 </head>
 
 <body class="bg-gray-100">
-<!-- Şık Kaç Net Yapmalıyım Paneli -->
-<div id="netCalculator" style="
+<style>
+#netCalculator {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -25,7 +25,27 @@
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     z-index: 9999;
-">
+}
+
+/* Mobilde küçült */
+@media screen and (max-width: 500px) {
+    #netCalculator {
+        width: 150px;
+        padding: 10px;
+        font-size: 12px;
+        top: 10px;
+        right: 10px;
+    }
+    #netCalculator button {
+        padding: 4px;
+        font-size: 12px;
+    }
+    #netCalculator input {
+        width: 50px;
+        padding: 3px;
+    }
+</style>
+
   <h4 style="margin:0 0 10px 0; font-size:15px; text-align:center;">Kaç Net Yapmalıyım?</h4>
   
   <label>Hedef Puan:<br>
