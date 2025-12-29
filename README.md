@@ -13,6 +13,8 @@
 
 <body class="bg-gray-100">
 <style>
+<!-- Şık ve Mobil Uyumlu Kaç Net Yapmalıyım Paneli -->
+<style>
 #netCalculator {
     position: fixed;
     top: 20px;
@@ -26,8 +28,31 @@
     font-size: 14px;
     z-index: 9999;
 }
+#netCalculator button {
+    width:100%;
+    padding:5px;
+    border:none;
+    background:#ff7e5f;
+    color:white;
+    border-radius:8px;
+    font-size:13px;
+    transition:0.3s;
+}
+#netCalculator button:hover {
+    background: #feb47b;
+}
+#netCalculator input {
+    width:60px;
+    padding:4px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    margin-top:4px;
+}
+#netCalculator span {
+    transition: all 0.3s ease;
+}
 
-/* Mobilde küçült */
+/* Mobilde küçültme */
 @media screen and (max-width: 500px) {
     #netCalculator {
         width: 150px;
@@ -44,34 +69,21 @@
         width: 50px;
         padding: 3px;
     }
+}
 </style>
 
+<div id="netCalculator">
   <h4 style="margin:0 0 10px 0; font-size:15px; text-align:center;">Kaç Net Yapmalıyım?</h4>
   
   <label>Hedef Puan:<br>
-    <input type="number" id="hedefPuan" style="
-        width:60px;
-        padding:4px;
-        border-radius:6px;
-        border:1px solid #ccc;
-        margin-top:4px;
-    " min="0" max="500">
+    <input type="number" id="hedefPuan" min="0" max="500">
   </label><br><br>
   
-  <button onclick="hesaplaNet()" style="
-      width:100%;
-      padding:5px;
-      border:none;
-      background:#ff7e5f;
-      color:white;
-      border-radius:8px;
-      font-size:13px;
-      transition:0.3s;
-  " onmouseover="this.style.background='#feb47b'" onmouseout="this.style.background='#ff7e5f'">Hesapla</button>
+  <button onclick="hesaplaNet()">Hesapla</button>
   
   <div id="netSonuc" style="margin-top:10px;">
-    <p>📘 TYT Net: <span id="tytNetSonuc" style="transition: all 0.3s ease;">0</span></p>
-    <p>📗 AYT Net: <span id="aytNetSonuc" style="transition: all 0.3s ease;">0</span></p>
+    <p>📘 TYT Net: <span id="tytNetSonuc">0</span></p>
+    <p>📗 AYT Net: <span id="aytNetSonuc">0</span></p>
   </div>
 </div>
 
@@ -84,7 +96,7 @@ function hesaplaNet() {
     if (hedef < 0) hedef = 0;
     if (hedef > 500) {
         hedef = 500;
-        hedefInput.value = 500; // input değerini güncelle
+        hedefInput.value = 500;
     }
 
     // Yaklaşık net hesaplama
@@ -102,7 +114,6 @@ function hesaplaNet() {
     aytEl.style.transform = "scale(1.2)";
     setTimeout(()=>{ tytEl.style.transform="scale(1)"; aytEl.style.transform="scale(1)"; },300);
 }
-
 </script>
 
 <!-- 🔵 BANNER -->
