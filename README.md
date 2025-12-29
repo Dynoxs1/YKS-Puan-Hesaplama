@@ -13,7 +13,7 @@
 
 <body class="bg-gray-100">
 <!-- Floating Mini Widget Butonu + Açıklama -->
-<div id="floatingNetButtonWrapper" style="position: fixed; bottom: 90px; right: 20px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; gap:4px;">
+<div id="floatingNetButtonWrapper" style="position: fixed; bottom: 90px; right: 15px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; gap:4px;">
   
   <!-- Açıklama -->
   <div style="
