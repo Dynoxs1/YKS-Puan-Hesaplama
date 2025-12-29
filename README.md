@@ -62,8 +62,6 @@ function hesaplaNet() {
 
     document.getElementById('tytNetSonuc').innerText = tytNet;
     document.getElementById('aytNetSonuc').innerText = aytNet;
-}
->
 
 <!-- 🔵 BANNER -->
 <div class="w-full bg-white">
