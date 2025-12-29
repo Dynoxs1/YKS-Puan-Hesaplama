@@ -13,7 +13,7 @@
 
 <body class="bg-gray-100">
 <!-- Floating Mini Widget Butonu + Açıklama -->
-<div id="floatingNetButtonWrapper" style="position: fixed; bottom: 90px; left: 10px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-start; gap:4px;">
+<div id="floatingNetButtonWrapper" style="position: fixed; bottom: 90px; right: 10px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; gap:4px;">
   
   <!-- Açıklama -->
   <div style="
@@ -45,7 +45,7 @@
 <div id="floatingNetWidget" style="
     position: fixed;
     bottom: 80px;
-    left: 10px;
+    right: 10px;
     width: 180px;
     background: #ffecd2;
     border-radius: 12px;
@@ -72,7 +72,7 @@
       color: #333;
   ">×</button>
 
-  <div style="display:flex; gap:5px; align-items:center;">
+  <div style="display:flex; gap:2px; align-items:center;"> <!-- gap küçültüldü -->
     <input type="number" id="floatingHedefPuan" placeholder="Hedef" style="
         flex:1;
         padding:5px;
@@ -81,6 +81,7 @@
         font-size:13px;
         transition: border 0.2s;
     " onfocus="this.style.borderColor='#ff7e5f'" onblur="this.style.borderColor='#ccc'">
+    
     <button onclick="hesaplaFloatingNet()" style="
         padding:5px 8px;
         font-size:13px;
@@ -138,15 +139,15 @@ function hesaplaFloatingNet() {
 </script>
 
 <style>
-/* Responsive: Mobilde widget sola kayar ve genişliği küçülür */
+/* Responsive: Mobilde widget sağ alt köşeye kayar ve genişliği küçülür */
 @media (max-width: 768px) {
     #floatingNetWidget {
         width: 160px;
-        left: 5px; /* tamamen sola yasla */
+        right: 5px;
     }
     #floatingNetButtonWrapper {
-        left: 5px; /* ikon da sola kayacak */
-        align-items: flex-start;
+        right: 5px;
+        align-items: flex-end;
     }
 }
 </style>
