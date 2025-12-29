@@ -90,12 +90,12 @@ YKS Net & Puan Hesaplama
   <input id="ae_y" type="number" min="0" max="40" class="border p-1">
 
   <span>Sosyal</span>
-  <input id="as_d" type="number" min="0" max="20" class="border p-1">
-  <input id="as_y" type="number" min="0" max="20" class="border p-1">
+  <input id="as_d" type="number" min="0" max="40" class="border p-1">
+  <input id="as_y" type="number" min="0" max="40" class="border p-1">
 
   <span>Fen</span>
-  <input id="af_d" type="number" min="0" max="20" class="border p-1">
-  <input id="af_y" type="number" min="0" max="20" class="border p-1">
+  <input id="af_d" type="number" min="0" max="40" class="border p-1">
+  <input id="af_y" type="number" min="0" max="40" class="border p-1">
 </div>
 
 <!-- DİPLOMA -->
