@@ -12,22 +12,45 @@
 </head>
 
 <body class="bg-gray-100">
-<!-- Sağ Alt Mini Floating Widget -->
-<div id="floatingNetWidget" style="
+<!-- Floating Mini Widget -->
+<div id="floatingNetButton" style="
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 180px;
+    z-index: 9999;
+">
+  <button onclick="toggleFloatingWidget()" style="
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      border:none;
+      background:#ff7e5f;
+      color:white;
+      font-size:24px;
+      cursor:pointer;
+      box-shadow:0 4px 8px rgba(0,0,0,0.2);
+      transition:0.3s;
+  " onmouseover="this.style.background='#feb47b'" onmouseout="this.style.background='#ff7e5f'">📝</button>
+</div>
+
+<!-- Floating Widget -->
+<div id="floatingNetWidget" style="
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 200px;
     background: #ffecd2;
     border-radius: 12px;
     padding: 10px;
     font-family: 'Poppins', sans-serif;
     font-size: 13px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    transition: transform 0.2s, box-shadow 0.2s;
+    display:none;
+    transition: transform 0.2s, opacity 0.2s;
     z-index: 9999;
 ">
-  <div style="display:flex; gap:6px; align-items:center;">
+  <!-- Input ve Buton Tek Satırda -->
+  <div style="display:flex; gap:5px; align-items:center;">
     <input type="number" id="floatingHedefPuan" placeholder="Hedef" style="
         flex:1;
         padding:5px;
@@ -48,13 +71,28 @@
     " onmouseover="this.style.background='#feb47b'" onmouseout="this.style.background='#ff7e5f'">Hesapla</button>
   </div>
 
-  <div id="floatingNetSonuc" style="margin-top:8px;">
+  <!-- TYT ve AYT Netleri -->
+  <div id="floatingNetSonuc" style="margin-top:8px; display:flex; justify-content:space-between;">
     <div>📘 TYT: <span id="floatingTytNet">0</span></div>
     <div>📗 AYT: <span id="floatingAytNet">0</span></div>
   </div>
 </div>
 
 <script>
+function toggleFloatingWidget() {
+    const widget = document.getElementById('floatingNetWidget');
+    if(widget.style.display === "none" || widget.style.display === "") {
+        widget.style.display = "block";
+        widget.style.transform = "scale(0.95)";
+        widget.style.opacity = "0";
+        setTimeout(()=>{widget.style.transform="scale(1)"; widget.style.opacity="1";}, 10);
+    } else {
+        widget.style.transform = "scale(0.95)";
+        widget.style.opacity = "0";
+        setTimeout(()=>{widget.style.display="none";}, 200);
+    }
+}
+
 function hesaplaFloatingNet() {
     let hedef = parseFloat(document.getElementById('floatingHedefPuan').value) || 0;
     if (hedef < 0) hedef = 0;
@@ -69,12 +107,12 @@ function hesaplaFloatingNet() {
     let tytEl = document.getElementById('floatingTytNet');
     let aytEl = document.getElementById('floatingAytNet');
 
-    // Hafif animasyon
+    // Netler animasyonu
     tytEl.style.transform = "scale(1.2)";
     aytEl.style.transform = "scale(1.2)";
     setTimeout(()=>{ tytEl.style.transform="scale(1)"; aytEl.style.transform="scale(1)"; },250);
 
-    // Widget "pop" efekti
+    // Widget pop efekti
     let widget = document.getElementById('floatingNetWidget');
     widget.style.transform = "scale(1.03)";
     setTimeout(()=>{ widget.style.transform="scale(1)"; },250);
