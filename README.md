@@ -10,76 +10,14 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<style>
-/* Genel arka plan */
-body {
-  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
-}
-
-/* Ana kart */
-.main-card {
-  animation: fadeIn 0.6s ease-in-out;
-}
-
-/* Input güzelleştirme */
-input {
-  border-radius: 0.5rem;
-  transition: all 0.2s ease;
-}
-
-input:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
-}
-
-/* Hesapla butonu */
-button {
-  transition: all 0.25s ease;
-}
-
-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 20px rgba(37,99,235,0.25);
-}
-
-/* Sonuç alanı */
-#sonuc {
-  background: #f8fafc;
-  border-radius: 0.75rem;
-  padding: 1rem;
-  margin-top: 1rem;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Banner görseli */
-.banner-img {
-  max-height: 260px;
-  object-fit: cover;
-}
-
-/* Animasyon */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-</style>
-
 
 <body class="bg-gray-100">
 
 <!-- 🔵 BANNER -->
 <div class="w-full bg-white">
   <img src="images/banner.jpg"
-     alt="YKS Net ve Puan Hesaplama"
-     class="banner-img w-full rounded-xl mb-6">
-
+       alt="YKS Net ve Puan Hesaplama"
+       class="w-full h-[45vh] sm:h-[55vh] object-contain">
 </div>
 
 <!-- Banner altı animasyonlu kutular -->
@@ -112,7 +50,7 @@ button:hover {
 </div>
 
 <!-- 🔵 HESAPLAMA ALANI -->
-<div class="main-card max-w-2xl mx-auto bg-white p-6 rounded-xl shadow-xl">
+<div class="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow mt-8">
 
 <h1 class="text-2xl font-bold text-center mb-6">
 YKS Net & Puan Hesaplama
@@ -176,52 +114,6 @@ Hesapla
 <canvas id="grafik" class="mt-6"></canvas>
 
 </div>
-<script>
-function net(d, y) {
-  return d - (y / 4);
-}
-
-function hesapla() {
-  const tNet = net(t_dogru.value, t_yanlis.value);
-  const mNet = net(m_dogru.value, m_yanlis.value);
-  const sNet = net(s_dogru.value, s_yanlis.value);
-  const fNet = net(f_dogru.value, f_yanlis.value);
-
-  // Önceki grafik varsa sil
-  if (window.netChart) {
-    window.netChart.destroy();
-  }
-
-  const ctx = document.getElementById("netGrafik").getContext("2d");
-
-  window.netChart = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: ["Türkçe", "Matematik", "Sosyal", "Fen"],
-      datasets: [{
-        label: "Netler",
-        data: [tNet, mNet, sNet, fNet],
-        backgroundColor: [
-          "#3b82f6",
-          "#22c55e",
-          "#f59e0b",
-          "#ef4444"
-        ],
-        borderRadius: 8
-      }]
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-}
-</script>
-
 
 <!-- FOOTER -->
 <footer class="text-center text-sm mt-8 mb-4">
