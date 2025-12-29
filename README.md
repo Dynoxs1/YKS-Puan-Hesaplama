@@ -13,12 +13,9 @@
 
 <body class="bg-gray-100">
 <style>
-<!-- Minimal Sağ Üst Kutucuk -->
 <div id="puanKutusu">
-  <div class="inputs">
-    <input type="number" id="hedefPuan" placeholder="Hedef Puan">
-    <button onclick="hesapla()">Hesapla</button>
-  </div>
+  <input type="number" id="hedefPuan" placeholder="Hedef">
+  <button onclick="hesapla()">Hesapla</button>
   <div class="netler">
     <div>TYT: <span id="tytNet">0</span></div>
     <div>AYT: <span id="aytNet">0</span></div>
@@ -26,76 +23,68 @@
 </div>
 
 <style>
-  /* Kutunun temel ayarları */
   #puanKutusu {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 180px;
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    font-family: 'Segoe UI', sans-serif;
+    top: 16px;
+    right: 16px;
+    width: 160px;
+    background: #f0f0f0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    z-index: 9999; /* en üstte görünmesi için */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: sans-serif;
     font-size: 13px;
     color: #333;
-    z-index: 1000;
   }
 
-  /* Input ve buton yan yana */
   .inputs {
     display: flex;
-    gap: 5px;
-    margin-bottom: 8px;
+    gap: 4px;
   }
 
   .inputs input {
     flex: 1;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    padding: 4px;
     font-size: 13px;
   }
 
   .inputs button {
-    padding: 5px 8px;
-    border: none;
-    background: #4CAF50;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
+    padding: 4px 6px;
     font-size: 13px;
+    cursor: pointer;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
   }
 
-  .inputs button:hover {
-    background: #45a049;
-  }
-
-  /* Netler bölümü */
   .netler div {
-    margin-top: 4px;
+    margin-top: 2px;
   }
 
-  /* Mobil uyumlu */
   @media (max-width: 500px) {
     #puanKutusu {
       width: 140px;
-      padding: 8px;
+      padding: 6px;
       font-size: 12px;
     }
-    .inputs button, .inputs input {
+    .inputs input, .inputs button {
       font-size: 12px;
-      padding: 4px 6px;
+      padding: 3px 5px;
     }
   }
 </style>
 
 <script>
-  function hesapla() {
-    const hedef = Number(document.getElementById('hedefPuan').value) || 0;
-    document.getElementById('tytNet').innerText = Math.round(hedef * 0.4);
-    document.getElementById('aytNet').innerText = Math.round(hedef * 0.6);
-  }
+function hesapla() {
+  const hedef = Number(document.getElementById('hedefPuan').value) || 0;
+  document.getElementById('tytNet').innerText = Math.round(hedef * 0.4);
+  document.getElementById('aytNet').innerText = Math.round(hedef * 0.6);
+}
 </script>
 
 <!-- 🔵 BANNER -->
