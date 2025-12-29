@@ -59,18 +59,18 @@
     transition: transform 0.2s, opacity 0.2s;
     z-index: 9999;
 ">
-  <!-- Kapatma Butonu -->
-  <button onclick="toggleFloatingWidget()" style="
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      border: none;
-      background: transparent;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      color: #333;
-  ">×</button>
+<!-- Kapatma Butonu -->
+<button onclick="toggleFloatingWidget()" style="
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+">×</button>
 
   <div style="display:flex; gap:5px; align-items:center;">
     <input type="number" id="floatingHedefPuan" placeholder="Hedef" style="
