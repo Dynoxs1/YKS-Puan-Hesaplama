@@ -13,16 +13,16 @@
 
 <body class="bg-gray-100">
 <style>
-<!-- Minimal Sağ Üst Kare Kutucuk -->
+<!-- Minimal Sağ Üst Kare Kutucuk - Mobil ve Desktop Uyumu -->
 <style>
 #netBox {
-    position: fixed; /* sabit sağ üst */
-    top: 20px;
-    right: 20px;
-    width: 140px;
-    height: 140px; /* kare */
-    background: #f8f8f8; /* sade arka plan */
-    border-radius: 8px;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 150px;
+    height: 140px;
+    background: #f5f5f5; /* soft arka plan */
+    border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     font-family: 'Poppins', sans-serif;
     font-size: 13px;
@@ -35,19 +35,26 @@
     text-align: center;
 }
 
+#netBox .inputArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
 #netBox input {
-    width: 60px;
+    width: 70px;
     padding: 3px;
-    border-radius: 4px;
+    border-radius: 5px;
     border: 1px solid #ccc;
     text-align: center;
     font-size: 13px;
 }
 
 #netBox button {
-    padding: 4px;
+    padding: 4px 6px;
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     background: #4caf50;
     color: white;
     font-size: 12px;
@@ -56,6 +63,10 @@
 }
 #netBox button:hover {
     background: #45a049;
+}
+
+#netBox p {
+    margin: 2px 0;
 }
 
 #netBox span {
@@ -67,14 +78,14 @@
 @media screen and (max-width: 500px) {
     #netBox {
         width: 120px;
-        height: 120px;
+        height: 130px;
         top: 10px;
         right: 10px;
         padding: 8px;
         font-size: 12px;
     }
     #netBox input {
-        width: 45px;
+        width: 50px;
         padding: 2px;
         font-size: 12px;
     }
@@ -86,12 +97,10 @@
 </style>
 
 <div id="netBox">
-    <div>
-        <label>Hedef:<br>
-            <input type="number" id="hedefPuan" min="0" max="500">
-        </label>
+    <div class="inputArea">
+        <input type="number" id="hedefPuan" placeholder="Hedef" min="0" max="500">
+        <button onclick="hesaplaNet()">Hesapla</button>
     </div>
-    <button onclick="hesaplaNet()">Hesapla</button>
     <div>
         <p>📘 TYT: <span id="tytNetSonuc">0</span></p>
         <p>📗 AYT: <span id="aytNetSonuc">0</span></p>
