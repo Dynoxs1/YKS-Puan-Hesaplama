@@ -13,7 +13,7 @@
 
 <body class="bg-gray-100">
 <!-- Floating Mini Widget Butonu + Açıklama -->
-<div id="floatingNetButtonWrapper" style="position: fixed; bottom: 90px; right: 15px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; gap:4px;">
+<div id="floatingNetButtonWrapper" style="position: fixed; bottom: 90px; right: 10px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; gap:4px;">
   
   <!-- Açıklama -->
   <div style="
@@ -45,8 +45,8 @@
 <div id="floatingNetWidget" style="
     position: fixed;
     bottom: 80px;
-    right: 20px;
-    width: 200px;
+    right: 10px;
+    width: 180px; /* genişliği küçülttük */
     background: #ffecd2;
     border-radius: 12px;
     padding: 10px;
@@ -59,18 +59,18 @@
     transition: transform 0.2s, opacity 0.2s;
     z-index: 9999;
 ">
-<!-- Kapatma Butonu -->
-<button onclick="toggleFloatingWidget()" style="
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    border: none;
-    background: transparent;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #333;
-">×</button>
+  <!-- Kapatma Butonu -->
+  <button onclick="toggleFloatingWidget()" style="
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      border: none;
+      background: transparent;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+  ">×</button>
 
   <div style="display:flex; gap:5px; align-items:center;">
     <input type="number" id="floatingHedefPuan" placeholder="Hedef" style="
