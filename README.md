@@ -13,75 +13,98 @@
 
 <body class="bg-gray-100">
 <style>
-<!-- Sabit Olmayan, Kutucuk Panel -->
+<!-- Sabit Kare Kutucuk -->
 <style>
-#netCalculator {
-    position: relative; /* artık sabit değil */
+#netBox {
+    position: fixed; /* sabit kutu */
+    top: 50px;
+    right: 50px;
     width: 220px;
+    height: 220px; /* kare şeklinde */
     background: linear-gradient(135deg, #ffecd2, #fcb69f);
     border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    margin: 20px; /* sayfa içinde biraz boşluk */
+    padding: 15px;
+    box-sizing: border-box;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-#netCalculator button {
-    width:100%;
-    padding:5px;
-    border:none;
-    background:#ff7e5f;
-    color:white;
-    border-radius:8px;
-    font-size:13px;
-    transition:0.3s;
+
+#netBox h4 {
+    margin: 0 0 10px 0;
+    text-align: center;
+    font-size: 16px;
 }
-#netCalculator button:hover {
+
+#netBox input {
+    width: 60px;
+    padding: 4px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 4px;
+}
+
+#netBox button {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    background: #ff7e5f;
+    color: white;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+#netBox button:hover {
     background: #feb47b;
 }
-#netCalculator input {
-    width:60px;
-    padding:4px;
-    border-radius:6px;
-    border:1px solid #ccc;
-    margin-top:4px;
+
+#netBox p {
+    margin: 5px 0;
 }
-#netCalculator span {
+
+#netBox span {
     transition: all 0.3s ease;
 }
 
 /* Mobil uyumlu */
 @media screen and (max-width: 500px) {
-    #netCalculator {
-        width: 150px;
+    #netBox {
+        width: 160px;
+        height: 160px;
+        top: 20px;
+        right: 20px;
         padding: 10px;
         font-size: 12px;
-        margin: 10px;
     }
-    #netCalculator button {
-        padding: 4px;
-        font-size: 12px;
-    }
-    #netCalculator input {
+    #netBox input {
         width: 50px;
         padding: 3px;
+    }
+    #netBox button {
+        padding: 4px;
+        font-size: 12px;
     }
 }
 </style>
 
-<div id="netCalculator">
-  <h4 style="margin:0 0 10px 0; font-size:15px; text-align:center;">Kaç Net Yapmalıyım?</h4>
-  
-  <label>Hedef Puan:<br>
-    <input type="number" id="hedefPuan" min="0" max="500">
-  </label><br><br>
-  
-  <button onclick="hesaplaNet()">Hesapla</button>
-  
-  <div id="netSonuc" style="margin-top:10px;">
-    <p>📘 TYT Net: <span id="tytNetSonuc">0</span></p>
-    <p>📗 AYT Net: <span id="aytNetSonuc">0</span></p>
-  </div>
+<div id="netBox">
+    <h4>Kaç Net Yapmalıyım?</h4>
+    
+    <div>
+        <label>Hedef Puan:<br>
+            <input type="number" id="hedefPuan" min="0" max="500">
+        </label><br><br>
+        <button onclick="hesaplaNet()">Hesapla</button>
+    </div>
+    
+    <div id="netSonuc">
+        <p>📘 TYT Net: <span id="tytNetSonuc">0</span></p>
+        <p>📗 AYT Net: <span id="aytNetSonuc">0</span></p>
+    </div>
 </div>
 
 <script>
@@ -95,8 +118,8 @@ function hesaplaNet() {
         hedefInput.value = 500;
     }
 
-    const tytNet = Math.round((hedef * 0.4) / 4); 
-    const aytNet = Math.round((hedef * 0.6) / 5); 
+    const tytNet = Math.round((hedef * 0.4) / 4);
+    const aytNet = Math.round((hedef * 0.6) / 5);
 
     let tytEl = document.getElementById('tytNetSonuc');
     let aytEl = document.getElementById('aytNetSonuc');
