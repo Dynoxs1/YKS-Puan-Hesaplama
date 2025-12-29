@@ -149,6 +149,9 @@ function hesaplaFloatingNet() {
         right: 5px;
         align-items: flex-end;
     }
+    #floatingHedefPuan {
+        flex: 0 0 70px;  /* mobilde input daralıyor */
+    }
 }
 </style>
 
