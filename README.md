@@ -50,9 +50,9 @@
 </div>
 
 <!-- 🔵 HESAPLAMA ALANI -->
-<div class="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow mt-8">
+<div class="max-w-2xl mx-auto bg-white p-6 rounded-2xl shadow-lg">
 
-<h1 class="text-2xl font-bold text-center mb-6">
+<h1 class="text-3xl font-extrabold text-center mb-2 text-gray-800">
 YKS Net & Puan Hesaplama
 </h1>
 
@@ -179,5 +179,5 @@ function hesapla() {
 }
 </script>
 
-</body>
+</body><body class="bg-gradient-to-br from-blue-50 to-gray-100 min-h-screen p-4">
 </html>
