@@ -22,7 +22,8 @@ YKS Net & Puan Hesaplama
 
 <img src="images/banner.jpg"
      alt="YKS Net ve Puan Hesaplama"
-     class="w-full h-80 sm:h-auto object-cover rounded-xl mb-6">
+     class="w-full h-[420px] sm:h-auto object-cover rounded-xl mb-6">
+
 
 <!-- HATA MESAJI -->
 <div id="hata" class="hidden bg-red-100 text-red-700 p-3 rounded mb-4 text-center font-semibold"></div>
