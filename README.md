@@ -20,52 +20,51 @@
     <button onclick="hesapla()">Hesapla</button>
   </div>
   <div class="netler">
-    <div>TYT Net: <span id="tytNet">0</span></div>
-    <div>AYT Net: <span id="aytNet">0</span></div>
+    <div>TYT: <span id="tytNet">0</span></div>
+    <div>AYT: <span id="aytNet">0</span></div>
   </div>
 </div>
 
 <style>
-  /* Genel kutu ayarları */
+  /* Kutunun temel ayarları */
   #puanKutusu {
     position: fixed;
-    top: 16px;
-    right: 16px;
-    width: 200px;
-    background: #ffffffcc; /* yarı saydam soft beyaz */
-    backdrop-filter: blur(10px);
-    padding: 12px;
-    border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    top: 20px;
+    right: 20px;
+    width: 180px;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     font-family: 'Segoe UI', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     color: #333;
-    z-index: 9999;
+    z-index: 1000;
   }
 
   /* Input ve buton yan yana */
   .inputs {
     display: flex;
-    gap: 6px;
-    margin-bottom: 10px;
+    gap: 5px;
+    margin-bottom: 8px;
   }
 
   .inputs input {
     flex: 1;
-    padding: 6px 8px;
-    border: 1px solid #ccc;
+    padding: 5px;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .inputs button {
-    padding: 6px 10px;
-    background: #4caf50;
-    color: white;
+    padding: 5px 8px;
     border: none;
+    background: #4CAF50;
+    color: white;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s;
+    font-size: 13px;
   }
 
   .inputs button:hover {
@@ -80,23 +79,22 @@
   /* Mobil uyumlu */
   @media (max-width: 500px) {
     #puanKutusu {
-      width: 160px;
-      padding: 10px;
+      width: 140px;
+      padding: 8px;
       font-size: 12px;
     }
-    .inputs button {
-      padding: 6px 8px;
+    .inputs button, .inputs input {
       font-size: 12px;
+      padding: 4px 6px;
     }
   }
 </style>
 
 <script>
   function hesapla() {
-    const hedef = document.getElementById('hedefPuan').value;
-    // Örnek hesaplama, sen kendi formüllerini buraya ekleyebilirsin
-    document.getElementById('tytNet').innerText = Math.floor(hedef * 0.4);
-    document.getElementById('aytNet').innerText = Math.floor(hedef * 0.6);
+    const hedef = Number(document.getElementById('hedefPuan').value) || 0;
+    document.getElementById('tytNet').innerText = Math.round(hedef * 0.4);
+    document.getElementById('aytNet').innerText = Math.round(hedef * 0.6);
   }
 </script>
 
