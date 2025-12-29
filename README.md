@@ -13,18 +13,19 @@
 
 <body class="bg-gray-100">
 <style>
-<!-- Sağ Tarafa Sabit, Şık Kare Kutucuk -->
+<!-- Minimal Sağ Üst Kare Kutucuk -->
 <style>
 #netBox {
-    position: fixed; /* sayfada sabit */
-    top: 50px;
-    right: 20px; /* sağ tarafa yasla */
-    width: 150px;
-    height: 150px; /* kare şeklinde */
-    background: linear-gradient(135deg, #ffecd2, #fcb69f); /* şık renkli arka plan */
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    position: fixed; /* sabit sağ üst */
+    top: 20px;
+    right: 20px;
+    width: 140px;
+    height: 140px; /* kare */
+    background: #f8f8f8; /* sade arka plan */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     font-family: 'Poppins', sans-serif;
+    font-size: 13px;
     padding: 10px;
     box-sizing: border-box;
     z-index: 9999;
@@ -36,29 +37,30 @@
 
 #netBox input {
     width: 60px;
-    padding: 4px;
-    border-radius: 6px;
-    border: none; /* çerçeve kaldırıldı */
+    padding: 3px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
     text-align: center;
+    font-size: 13px;
 }
 
 #netBox button {
     padding: 4px;
     border: none;
     border-radius: 6px;
-    background: #ff7e5f;
+    background: #4caf50;
     color: white;
     font-size: 12px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 #netBox button:hover {
-    background: #feb47b;
+    background: #45a049;
 }
 
 #netBox span {
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 /* Mobil uyumlu */
@@ -66,14 +68,15 @@
     #netBox {
         width: 120px;
         height: 120px;
-        top: 20px;
+        top: 10px;
         right: 10px;
         padding: 8px;
         font-size: 12px;
     }
     #netBox input {
         width: 45px;
-        padding: 3px;
+        padding: 2px;
+        font-size: 12px;
     }
     #netBox button {
         padding: 3px;
@@ -117,7 +120,7 @@ function hesaplaNet() {
 
     tytEl.style.transform = "scale(1.2)";
     aytEl.style.transform = "scale(1.2)";
-    setTimeout(()=>{ tytEl.style.transform="scale(1)"; aytEl.style.transform="scale(1)"; },300);
+    setTimeout(()=>{ tytEl.style.transform="scale(1)"; aytEl.style.transform="scale(1)"; },200);
 }
 </script>
 
