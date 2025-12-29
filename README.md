@@ -45,7 +45,7 @@
 <div id="floatingNetWidget" style="
     position: fixed;
     bottom: 80px;
-    right: 50px;
+    right: 10px;
     width: 180px;
     background: #ffecd2;
     border-radius: 12px;
@@ -72,9 +72,10 @@
       color: #333;
   ">×</button>
 
-  <div style="display:flex; gap:2px; align-items:center;"> <!-- gap küçültüldü -->
+  <!-- Hedef ve Hesapla -->
+  <div style="display:flex; gap:2px; align-items:center;">
     <input type="number" id="floatingHedefPuan" placeholder="Hedef" style="
-        flex:0 0 90px;
+        width: 90px;  /* desktop genişliği */
         padding:5px;
         border-radius:5px;
         border:1px solid #ccc;
@@ -94,6 +95,7 @@
     " onmouseover="this.style.background='#feb47b'" onmouseout="this.style.background='#ff7e5f'">Hesapla</button>
   </div>
 
+  <!-- Net Sonuçları -->
   <div id="floatingNetSonuc" style="margin-top:8px; display:flex; justify-content:space-between;">
     <div>📘 TYT: <span id="floatingTytNet">0</span></div>
     <div>📗 AYT: <span id="floatingAytNet">0</span></div>
@@ -139,7 +141,7 @@ function hesaplaFloatingNet() {
 </script>
 
 <style>
-/* Responsive: Mobilde widget sağ alt köşeye kayar ve genişliği küçülür */
+/* Responsive: Mobilde input daralıyor, widget sağ alt köşede */
 @media (max-width: 768px) {
     #floatingNetWidget {
         width: 160px;
@@ -150,7 +152,7 @@ function hesaplaFloatingNet() {
         align-items: flex-end;
     }
     #floatingHedefPuan {
-        flex: 0 0 70px;  /* mobilde input daralıyor */
+        width: 70px !important; /* mobilde input daralıyor */
     }
 }
 </style>
