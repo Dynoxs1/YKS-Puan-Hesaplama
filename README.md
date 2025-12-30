@@ -9,6 +9,9 @@
 body{background:#f7f7f7;color:#333;font-family:'Poppins',sans-serif;}
 header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;background:linear-gradient(135deg,#ffecd2,#fcb69f);box-shadow:0 4px 8px rgba(0,0,0,0.1);}
 .btn{display:inline-block;padding:8px 14px;border:none;border-radius:8px;background:#ff7e5f;color:white;cursor:pointer;font-size:14px;transition:0.3s;text-decoration:none;text-align:center;margin-right:10px;}
+ /* Widget */
+#floatingNetButtonWrapper{position:fixed;bottom:90px;right:10px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:4px;}
+#floatingNetWidget{position:fixed;bottom:80px;right:10px;width:180px;background:#ffecd2;border-radius:12px;padding:10px;font-size:13px;box-shadow:0 4px 10px rgba(0,0,0,0.15);display:none;transform:scale(0);opacity:0;transition: transform 0.2s, opacity 0.2s;z-index:9999;}
 .btn:hover{background:#feb47b;}
 .panel{background:white;border-radius:12px;padding:15px;box-shadow:0 6px 12px rgba(0,0,0,0.15);margin-top:10px;position:relative;display:none;}
 #panelText ul{padding-left:18px;margin:0;}
