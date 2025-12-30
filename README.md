@@ -171,11 +171,17 @@ function hesaplaFloatingNet() {
     setTimeout(()=>{ tytEl.style.transform="scale(1)"; aytEl.style.transform="scale(1)";},250);
 }
 
-<!-- Açılır Panel -->
-<div id="infoPanel" class="panel hidden">
-  <button onclick="closePanel()" style="position:absolute;top:5px;right:5px;border:none;background:transparent;font-size:18px;cursor:pointer;">×</button>
-  <h4 id="panelTitle" style="color:#ff7e5f;margin-bottom:10px;"></h4>
-  <div id="panelText" style="font-size:14px;color:#555;line-height:1.5;"></div>
+<!-- Başlık Altı Butonlar -->
+<div style="max-width:1200px;margin:20px auto;padding:0 20px;">
+  <button class="btn" onclick="openPanel('puan')">Puan İpuçları</button>
+  <button class="btn" onclick="openPanel('tavsiye')">Sınav Tavsiyeleri</button>
+
+  <!-- Açılır Panel -->
+  <div id="infoPanel" class="panel hidden">
+    <button onclick="closePanel()" style="position:absolute;top:5px;right:5px;border:none;background:transparent;font-size:18px;cursor:pointer;">×</button>
+    <h4 id="panelTitle" style="color:#ff7e5f;margin-bottom:10px;"></h4>
+    <div id="panelText" style="font-size:14px;color:#555;line-height:1.5;"></div>
+  </div>
 </div>
 
 <script>
