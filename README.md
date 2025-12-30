@@ -3,119 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modern Site</title>
+<title>YKS Destek Sitesi</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; }
-  body { background: #f7f7f7; color: #333; line-height:1.5; }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f7f7f7;color:#333;line-height:1.5;}
+header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;background:linear-gradient(135deg,#ffecd2,#fcb69f);box-shadow:0 4px 8px rgba(0,0,0,0.1);}
+main{max-width:1200px;margin:40px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.card{background:white;padding:20px;border-radius:12px;box-shadow:0 6px 12px rgba(0,0,0,0.1);transition:transform 0.3s,box-shadow 0.3s;}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 20px rgba(0,0,0,0.15);}
+.card h3{margin-bottom:10px;font-size:18px;font-weight:600;color:#ff7e5f;}
+.card p{font-size:14px;color:#555;margin-bottom:10px;}
+.btn{display:inline-block;padding:10px 18px;border:none;border-radius:8px;background:#ff7e5f;color:white;cursor:pointer;font-size:14px;transition:0.3s;text-decoration:none;text-align:center;}
+.btn:hover{background:#feb47b;}
+footer{text-align:center;padding:20px;margin-top:40px;background:#fff5ee;color:#555;font-size:14px;box-shadow:0 -2px 6px rgba(0,0,0,0.05);}
 
-  /* Header */
-  header {
-      width:100%;
-      padding:20px;
-      background: linear-gradient(135deg, #ffecd2, #fcb69f);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      text-align:center;
-      font-size:24px;
-      font-weight:600;
-  }
-
-  /* Main Content */
-  main {
-      max-width:1200px;
-      margin:40px auto;
-      padding:0 20px;
-      display:flex;
-      flex-direction:column;
-      gap:30px;
-  }
-
-  /* Bölüm Kartları */
-  .section {
-      background:white;
-      padding:25px;
-      border-radius:12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-  }
-
-  .section h2 {
-      margin-bottom:15px;
-      font-size:20px;
-      font-weight:600;
-      color:#ff7e5f;
-  }
-
-  .section p {
-      font-size:14px;
-      color:#555;
-      margin-bottom:10px;
-  }
-
-  .btn {
-      display:inline-block;
-      padding:10px 18px;
-      border:none;
-      border-radius:8px;
-      background:#ff7e5f;
-      color:white;
-      cursor:pointer;
-      font-size:14px;
-      transition:0.3s;
-      text-decoration:none;
-      text-align:center;
-  }
-
-  .btn:hover { background:#feb47b; }
-
-  footer {
-      text-align:center;
-      padding:20px;
-      margin-top:40px;
-      background:#fff5ee;
-      color:#555;
-      font-size:14px;
-      box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
-  }
-
-  @media (max-width:768px) {
-      main { padding:0 15px; }
-  }
+/* Responsive */
+@media(max-width:768px){main{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 
-<header>💻 Modern Web Site</header>
+<header>🎯 YKS Destek Sitesi</header>
 
 <main>
-  <!-- Hakkımızda Bölümü -->
-  <div class="section">
-      <h2>Hakkımızda</h2>
-      <p>Biz modern ve kullanıcı dostu web çözümleri sunuyoruz. Sitemiz minimal ve hızlıdır.</p>
-      <a href="#" class="btn">Detayları Gör</a>
+  <!-- Kaç Net Yapmalıyım Widget Placeholder -->
+  <div class="card">
+      <h3>Kaç Net Yapmalıyım?</h3>
+      <p>Hedef puanınızı girin ve gerekli netleri görün.</p>
+      <a href="#" class="btn" onclick="document.getElementById('floatingNetButton').click()">Hesapla</a>
   </div>
 
-  <!-- Hizmetler Bölümü -->
-  <div class="section">
-      <h2>Hizmetlerimiz</h2>
-      <p>Web tasarım, yazılım geliştirme ve UI/UX danışmanlığı hizmetleri sunuyoruz.</p>
-      <a href="#" class="btn">Hizmetleri Keşfet</a>
+  <!-- Puan İpuçları -->
+  <div class="card">
+      <h3>Puan İpuçları</h3>
+      <p>TYT ve AYT puanınızı artırmak için kısa ve pratik tavsiyeler.</p>
+      <a href="#" class="btn">İpuçlarını Gör</a>
   </div>
 
-  <!-- İletişim Bölümü -->
-  <div class="section">
-      <h2>İletişim</h2>
-      <p>Sorularınız mı var? Bizimle iletişime geçin, size yardımcı olalım.</p>
-      <a href="#" class="btn">İletişime Geç</a>
+  <!-- Kullanıcı Yorumları -->
+  <div class="card">
+      <h3>Kullanıcı Deneyimleri</h3>
+      <p>Önceki öğrencilerimizin YKS maceralarını okuyun ve motivasyon kazanın.</p>
+      <a href="#" class="btn">Yorumları Oku</a>
+  </div>
+
+  <!-- Sınav Tavsiyeleri -->
+  <div class="card">
+      <h3>Sınav Tavsiyeleri</h3>
+      <p>Kısa ve etkili sınav stratejileri ile zamanınızı verimli kullanın.</p>
+      <a href="#" class="btn">Tavsiyeleri Gör</a>
   </div>
 </main>
 
-<footer>© 2025 Modern Site. Tüm Hakları Saklıdır.</footer>
+<footer>© 2026 YKS Destek. Tüm Hakları Saklıdır.</footer>
 
 </body>
 </html>
