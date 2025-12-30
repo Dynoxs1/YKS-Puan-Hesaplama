@@ -20,7 +20,7 @@ header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;
 }
 </style>
 </head>
-  <!-- İlk Giriş İpucu Balonu -->
+<!-- İlk Giriş İpucu Balonu -->
 <div id="firstVisitTip" style="
     position: fixed;
     bottom: 160px;
@@ -38,26 +38,21 @@ header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;
   <div style="color:#555; line-height:1.4;">
     TYT ve AYT doğru–yanlışlarını girerek netini hemen öğrenebilirsin.
   </div>
-  <button onclick="closeTip()" style="
-      margin-top:6px;
-      font-size:12px;
-      color:#ff7e5f;
-      background:none;
-      border:none;
-      cursor:pointer;
-  ">Anladım</button>
 </div>
 
 <script>
 if (!localStorage.getItem("firstVisitTipShown")) {
     setTimeout(() => {
-        document.getElementById("firstVisitTip").style.display = "block";
+        const tip = document.getElementById("firstVisitTip");
+        tip.style.display = "block";
         localStorage.setItem("firstVisitTipShown", "true");
-    }, 1500);
-}
 
-function closeTip() {
-    document.getElementById("firstVisitTip").style.display = "none";
+        // 4 saniye sonra otomatik kapat
+        setTimeout(() => {
+            tip.style.display = "none";
+        }, 4000);
+
+    }, 1200);
 }
 </script>
 
