@@ -64,6 +64,10 @@ footer{text-align:center;padding:20px;margin-top:40px;background:#fff5ee;color:#
 </div>
 
 <script>
+function closeContent(){
+    document.getElementById('contentArea').classList.add('hidden');
+}
+<script>
 const content = {
     'puan': {
         title: 'Puan İpuçları',
