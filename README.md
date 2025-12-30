@@ -41,19 +41,22 @@ header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;
 </div>
 
 <script>
-if (!localStorage.getItem("firstVisitTipShown")) {
-    setTimeout(() => {
+document.addEventListener("DOMContentLoaded", function () {
+    if (!localStorage.getItem("firstVisitTipShown")) {
         const tip = document.getElementById("firstVisitTip");
-        tip.style.display = "block";
-        localStorage.setItem("firstVisitTipShown", "true");
 
-        // 4 saniye sonra otomatik kapat
         setTimeout(() => {
-            tip.style.display = "none";
-        }, 4000);
+            tip.style.display = "block";
 
-    }, 1200);
-}
+            // 4 saniye sonra otomatik kapanır
+            setTimeout(() => {
+                tip.style.display = "none";
+            }, 4000);
+
+            localStorage.setItem("firstVisitTipShown", "true");
+        }, 1200);
+    }
+});
 </script>
 
 <body>
