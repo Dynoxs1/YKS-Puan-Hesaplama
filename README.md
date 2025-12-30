@@ -43,24 +43,96 @@ header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;
   </div>
 </div>
 
-<!-- 🔵 Tek Widget Başlangıç -->
-<div id="floatingNetButtonWrapper">
+<!-- Floating Mini Widget Butonu + Açıklama -->
+<div id="floatingNetButtonWrapper" style="position: fixed; bottom: 90px; right: 10px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; gap:4px;">
+  
   <!-- İkon -->
-  <button id="floatingNetButton" onclick="toggleFloatingWidget()" style="width:50px;height:50px;border-radius:50%;border:none;background:#ff7e5f;color:white;font-size:24px;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,0.2);transition:0.3s;" onmouseover="this.style.background='#feb47b'" onmouseout="this.style.background='#ff7e5f'">📝</button>
+  <button id="floatingNetButton" onclick="toggleFloatingWidget()" style="
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      border:none;
+      background:#ff7e5f;
+      color:white;
+      font-size:24px;
+      cursor:pointer;
+      box-shadow:0 4px 8px rgba(0,0,0,0.2);
+      transition:0.3s;
+      position: relative;
+      z-index: 10000; /* ikon her zaman üstte */
+  " onmouseover="this.style.background='#feb47b'" onmouseout="this.style.background='#ff7e5f'">📝</button>
 
   <!-- Açıklama ikonun altına -->
-  <div style="background: rgba(255,255,255,0.9); padding: 3px 8px; border-radius:6px; font-size:12px; box-shadow:0 2px 5px rgba(0,0,0,0.15); color:#333;">Hedef puanınızı hesaplayın</div>
+  <div style="
+      background: rgba(255,255,255,0.9);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      color: #333;
+      z-index: 10000;
+  ">Hedef puanınızı hesaplayın</div>
 </div>
 
-<div id="floatingNetWidget">
-  <button onclick="toggleFloatingWidget()" style="position:absolute;top:-5px;right:-5px;border:none;background:transparent;font-size:16px;font-weight:bold;cursor:pointer;color:#333;">×</button>
+<!-- Floating Widget -->
+<div id="floatingNetWidget" style="
+    position: fixed;
+    bottom: 80px;
+    right: 10px;
+    width: 180px;
+    background: #ffecd2;
+    border-radius: 12px;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display:none;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.2s, opacity 0.2s;
+    z-index: 10001; /* panel ikon ve açıklamanın üstünde */
+">
+  <!-- Kapatma Butonu -->
+  <button onclick="toggleFloatingWidget()" style="
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      border: none;
+      background: transparent;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+      z-index:10002; /* çarpı her zaman üstte */
+  ">×</button>
 
-  <div style="display:flex; gap:2px; align-items:center;">
-    <input type="number" id="floatingHedefPuan" placeholder="Hedef" style="width:90px;padding:5px;border-radius:5px;border:1px solid #ccc;font-size:13px;transition:border 0.2s;" onfocus="this.style.borderColor='#ff7e5f'" onblur="this.style.borderColor='#ccc'">
-    <button onclick="hesaplaFloatingNet()" style="padding:5px 8px;font-size:13px;border:none;border-radius:5px;background:#ff7e5f;color:white;cursor:pointer;transition:0.3s;" onmouseover="this.style.background='#feb47b'" onmouseout="this.style.background='#ff7e5f'">Hesapla</button>
+  <!-- Hedef ve Hesapla -->
+  <div style="display:flex; gap:2px; align-items:center; z-index:10001;">
+    <input type="number" id="floatingHedefPuan" placeholder="Hedef" style="
+        width: 90px;
+        padding:5px;
+        border-radius:5px;
+        border:1px solid #ccc;
+        font-size:13px;
+        transition: border 0.2s;
+        z-index:10001;
+    " onfocus="this.style.borderColor='#ff7e5f'" onblur="this.style.borderColor='#ccc'">
+    
+    <button onclick="hesaplaFloatingNet()" style="
+        padding:5px 8px;
+        font-size:13px;
+        border:none;
+        border-radius:5px;
+        background:#ff7e5f;
+        color:white;
+        cursor:pointer;
+        transition:0.3s;
+        z-index:10001;
+    " onmouseover="this.style.background='#feb47b'" onmouseout="this.style.background='#ff7e5f'">Hesapla</button>
   </div>
 
-  <div id="floatingNetSonuc" style="margin-top:8px; display:flex; justify-content:space-between;">
+  <!-- Net Sonuçları -->
+  <div id="floatingNetSonuc" style="margin-top:8px; display:flex; justify-content:space-between; z-index:10001;">
     <div>📘 TYT: <span id="floatingTytNet">0</span></div>
     <div>📗 AYT: <span id="floatingAytNet">0</span></div>
   </div>
