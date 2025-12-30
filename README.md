@@ -121,16 +121,6 @@ function closePanel(){
 <!-- Floating Mini Widget Butonu + Açıklama -->
 <div id="floatingNetButtonWrapper" style="position: fixed; bottom: 90px; right: 10px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; gap:4px;">
   
-  <!-- Açıklama -->
-  <div style="
-      background: rgba(255,255,255,0.9);
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 12px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-      color: #333;
-  ">Hedef puanınızı hesaplayın</div>
-
   <!-- İkon -->
   <button id="floatingNetButton" onclick="toggleFloatingWidget()" style="
       width:50px;
@@ -145,6 +135,16 @@ function closePanel(){
       transition:0.3s;
       position: relative;
   " onmouseover="this.style.background='#feb47b'" onmouseout="this.style.background='#ff7e5f'">📝</button>
+
+  <!-- Açıklama: ikonun altına taşındı -->
+  <div style="
+      background: rgba(255,255,255,0.9);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      color: #333;
+  ">Hedef puanınızı hesaplayın</div>
 </div>
 
 <!-- Floating Widget -->
@@ -428,5 +428,3 @@ function hesapla() {
   });
 }
 </script>
-
-</body><body class="bg-gradient-to-br from-blue-50 to-gray-100 min-h-screen p-4">
