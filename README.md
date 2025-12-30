@@ -19,6 +19,7 @@ header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;
   #panelText ul li{font-size:13px;line-height:1.4;}
   #panelTitle{font-size:16px;}
   #floatingNetWidget{width:160px !important; right:5px !important;}
+  #floatingNetButtonWrapper{right:5px;align-items:flex-end;}
   #floatingHedefPuan{width:70px !important;}
 }
 </style>
