@@ -165,6 +165,18 @@ function hesaplaFloatingNet(){
   </div>
 
 </div>
+<!-- Bilgi Rozetleri -->
+<div class="flex flex-wrap gap-2 mb-4">
+  <span class="px-3 py-1 text-xs rounded-full bg-blue-100 text-blue-700">
+    📊 Anlık Net Hesaplama
+  </span>
+  <span class="px-3 py-1 text-xs rounded-full bg-green-100 text-green-700">
+    🎯 2026 Güncel YKS Sistemi
+  </span>
+  <span class="px-3 py-1 text-xs rounded-full bg-purple-100 text-purple-700">
+    ⚡ Ücretsiz & Hızlı
+  </span>
+</div>
 
 <!-- 🔵 HESAPLAMA ALANI -->
 <div class="max-w-2xl mx-auto bg-white p-6 rounded-2xl shadow-lg">
