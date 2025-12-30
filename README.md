@@ -20,7 +20,6 @@ main{max-width:1200px;margin:40px auto;padding:0 20px;display:grid;grid-template
 footer{text-align:center;padding:20px;margin-top:40px;background:#fff5ee;color:#555;font-size:14px;box-shadow:0 -2px 6px rgba(0,0,0,0.05);}
 @media(max-width:768px){main{grid-template-columns:1fr;}}
 </style>
-</head>
 <body>
 
 <header>🎯 YKS Destek Sitesi</header>
@@ -45,15 +44,24 @@ footer{text-align:center;padding:20px;margin-top:40px;background:#fff5ee;color:#
       <p>Kısa ve etkili sınav stratejileri ile zamanınızı verimli kullanın.</p>
   </div>
 
-  <!-- İçerik Gösterme Alanı -->
-  <div id="contentArea" class="card hidden">
-      <h3 id="contentTitle"></h3>
-      <p id="contentText"></p>
-  </div>
+<!-- İçerik Gösterme Alanı -->
+<div id="contentArea" class="card hidden" style="position:relative;">
+    <!-- Çarpı Butonu -->
+    <button onclick="closeContent()" style="
+        position:absolute;
+        top:5px;
+        right:5px;
+        border:none;
+        background:transparent;
+        font-size:18px;
+        font-weight:bold;
+        cursor:pointer;
+        color:#333;
+    ">×</button>
 
-</main>
-
-<footer>© 2025 YKS Destek. Tüm Hakları Saklıdır.</footer>
+    <h3 id="contentTitle"></h3>
+    <p id="contentText"></p>
+</div>
 
 <script>
 const content = {
@@ -74,10 +82,11 @@ function showContent(key){
     area.classList.remove('hidden');
     area.scrollIntoView({behavior:'smooth'});
 }
-</script>
 
-</body>
-</html>
+function closeContent(){
+    document.getElementById('contentArea').classList.add('hidden');
+}
+</script>
 
 <title>YKS Net ve Puan Hesaplama | TYT AYT 2026</title>
 <meta name="description" content="YKS TYT ve AYT net hesaplama aracı. Doğru yanlış girerek netini ve tahmini puanını hemen öğren. Ücretsiz.">
