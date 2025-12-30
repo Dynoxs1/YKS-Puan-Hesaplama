@@ -61,7 +61,6 @@ window.addEventListener("load", function () {
 <div style="max-width:1200px;margin:20px auto;padding:0 20px;">
   <button class="btn" onclick="openPanel('puan')">Puan İpuçları</button>
   <button class="btn" onclick="openPanel('tavsiye')">Sınav Tavsiyeleri</button>
-
   <div id="infoPanel" class="panel">
     <button onclick="closePanel()" style="position:absolute;top:5px;right:5px;border:none;background:transparent;font-size:18px;cursor:pointer;">×</button>
     <h4 id="panelTitle" style="color:#ff7e5f;margin-bottom:10px;"></h4>
@@ -145,7 +144,6 @@ function hesaplaFloatingNet(){
 </script>
 
 </body>
-</html>
 
 <style>
 /* Responsive: Mobilde input daralıyor, widget sağ alt köşede */
