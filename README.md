@@ -321,25 +321,24 @@ function hesapla() {
   TYT Puan: ${tytPuan.toFixed(2)}<br>
   AYT Puan: ${aytPuan.toFixed(2)}
   `;
-
+<canvas id="grafik" width="400" height="200"></canvas>
 if (window.chart) {
   window.chart.destroy();
 }
 
-window.chart = new Chart(document.getElementById("grafik"), {
+var ctx = document.getElementById("grafik").getContext("2d");
+
+window.chart = new Chart(ctx, {
   type: "bar",
   data: {
     labels: ["TYT", "AYT"],
     datasets: [{
-      label: "Puan",
       data: [tytPuan, aytPuan],
-      backgroundColor: ["#60a5fa", "#34d399"],
-      borderRadius: 6
+      backgroundColor: ["#3b82f6", "#10b981"]
     }]
   },
   options: {
     responsive: true,
-    maintainAspectRatio: false,
     plugins: {
       legend: {
         display: false
@@ -352,4 +351,3 @@ window.chart = new Chart(document.getElementById("grafik"), {
     }
   }
 });
-
