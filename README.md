@@ -322,16 +322,34 @@ function hesapla() {
   AYT Puan: ${aytPuan.toFixed(2)}
   `;
 
-  if (window.chart) window.chart.destroy();
-  window.chart = new Chart(document.getElementById("grafik"), {
-    type: "bar",
-    data: {
-      labels: ["TYT", "AYT"],
-      datasets: [{
-        label: "Puan",
-        data: [tytPuan, aytPuan]
-      }]
-    }
-  });
+if (window.chart) {
+  window.chart.destroy();
 }
-</script>
+
+window.chart = new Chart(document.getElementById("grafik"), {
+  type: "bar",
+  data: {
+    labels: ["TYT", "AYT"],
+    datasets: [{
+      label: "Puan",
+      data: [tytPuan, aytPuan],
+      backgroundColor: ["#60a5fa", "#34d399"],
+      borderRadius: 6
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
