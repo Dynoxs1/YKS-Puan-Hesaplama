@@ -57,7 +57,7 @@ window.addEventListener("load", function () {
 
 <header>🎯 YKS Destek Sitesi</header>
 
-<div style="max-width:1200px;margin:20px auto;padding:0 20px;">
+<div style="max-width:1200px;margin:20px auto 30px;padding:0 20px;">
   <button class="btn" onclick="openPanel('puan')">Puan İpuçları</button>
   <button class="btn" onclick="openPanel('tavsiye')">Sınav Tavsiyeleri</button>
 <div id="infoPanel" class="panel" style="display:none;">
