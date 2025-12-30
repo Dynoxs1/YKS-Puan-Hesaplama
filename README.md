@@ -10,15 +10,14 @@
 body{background:#f7f7f7;color:#333;line-height:1.5;}
 header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;background:linear-gradient(135deg,#ffecd2,#fcb69f);box-shadow:0 4px 8px rgba(0,0,0,0.1);}
 main{max-width:1200px;margin:40px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.card{background:white;padding:20px;border-radius:12px;box-shadow:0 6px 12px rgba(0,0,0,0.1);transition:transform 0.3s,box-shadow 0.3s;}
+.card{background:white;padding:20px;border-radius:12px;box-shadow:0 6px 12px rgba(0,0,0,0.1);transition:transform 0.3s,box-shadow 0.3s;cursor:pointer;}
 .card:hover{transform:translateY(-5px);box-shadow:0 12px 20px rgba(0,0,0,0.15);}
 .card h3{margin-bottom:10px;font-size:18px;font-weight:600;color:#ff7e5f;}
 .card p{font-size:14px;color:#555;margin-bottom:10px;}
 .btn{display:inline-block;padding:10px 18px;border:none;border-radius:8px;background:#ff7e5f;color:white;cursor:pointer;font-size:14px;transition:0.3s;text-decoration:none;text-align:center;}
 .btn:hover{background:#feb47b;}
+.hidden{display:none;}
 footer{text-align:center;padding:20px;margin-top:40px;background:#fff5ee;color:#555;font-size:14px;box-shadow:0 -2px 6px rgba(0,0,0,0.05);}
-
-/* Responsive */
 @media(max-width:768px){main{grid-template-columns:1fr;}}
 </style>
 </head>
@@ -27,7 +26,7 @@ footer{text-align:center;padding:20px;margin-top:40px;background:#fff5ee;color:#
 <header>🎯 YKS Destek Sitesi</header>
 
 <main>
-  <!-- Kaç Net Yapmalıyım Widget Placeholder -->
+  <!-- Kaç Net Yapmalıyım Widget -->
   <div class="card">
       <h3>Kaç Net Yapmalıyım?</h3>
       <p>Hedef puanınızı girin ve gerekli netleri görün.</p>
@@ -35,28 +34,47 @@ footer{text-align:center;padding:20px;margin-top:40px;background:#fff5ee;color:#
   </div>
 
   <!-- Puan İpuçları -->
-  <div class="card">
+  <div class="card" onclick="showContent('puan')">
       <h3>Puan İpuçları</h3>
       <p>TYT ve AYT puanınızı artırmak için kısa ve pratik tavsiyeler.</p>
-      <a href="#" class="btn">İpuçlarını Gör</a>
-  </div>
-
-  <!-- Kullanıcı Yorumları -->
-  <div class="card">
-      <h3>Kullanıcı Deneyimleri</h3>
-      <p>Önceki öğrencilerimizin YKS maceralarını okuyun ve motivasyon kazanın.</p>
-      <a href="#" class="btn">Yorumları Oku</a>
   </div>
 
   <!-- Sınav Tavsiyeleri -->
-  <div class="card">
+  <div class="card" onclick="showContent('tavsiyeler')">
       <h3>Sınav Tavsiyeleri</h3>
       <p>Kısa ve etkili sınav stratejileri ile zamanınızı verimli kullanın.</p>
-      <a href="#" class="btn">Tavsiyeleri Gör</a>
   </div>
+
+  <!-- İçerik Gösterme Alanı -->
+  <div id="contentArea" class="card hidden">
+      <h3 id="contentTitle"></h3>
+      <p id="contentText"></p>
+  </div>
+
 </main>
 
-<footer>© 2026 YKS Destek. Tüm Hakları Saklıdır.</footer>
+<footer>© 2025 YKS Destek. Tüm Hakları Saklıdır.</footer>
+
+<script>
+const content = {
+    'puan': {
+        title: 'Puan İpuçları',
+        text: 'Ders çalışma planı oluşturun, deneme sınavlarını düzenli çözün ve yanlışlarınızı analiz edin. Günlük küçük hedefler belirlemek motivasyonu artırır.'
+    },
+    'tavsiyeler': {
+        title: 'Sınav Tavsiyeleri',
+        text: 'Sınav günü stres yönetimi önemlidir. Zamanı verimli kullanın, soru tiplerini önceden çalışın ve kısa molalar verin.'
+    }
+};
+
+function showContent(key){
+    const area = document.getElementById('contentArea');
+    document.getElementById('contentTitle').innerText = content[key].title;
+    document.getElementById('contentText').innerText = content[key].text;
+    area.classList.remove('hidden');
+    area.scrollIntoView({behavior:'smooth'});
+}
+</script>
 
 </body>
 </html>
