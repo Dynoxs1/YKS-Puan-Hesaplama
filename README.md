@@ -81,16 +81,31 @@ header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;
 <div id="sonuc" class="max-w-5xl mx-auto px-4"></div>
 
 <script>
+function saatFormatla(saat) {
+  const tamSaat = Math.floor(saat);
+  const dakika = (saat - tamSaat) === 0.5 ? 30 : 0;
+
+  if (tamSaat === 0) {
+    return `${dakika} dk`;
+  }
+  if (dakika === 0) {
+    return `${tamSaat} saat`;
+  }
+  return `${tamSaat} saat ${dakika} dk`;
+</script
 function programOlustur() {
   const alan = document.getElementById("alan").value;
   const gunlukSaat = Number(document.getElementById("saat").value);
-  if (!gunlukSaat) return alert("Saat gir kanka 😄");
+  // ⛔ saat kontrolü
+  if (isNaN(gunlukSaat) || gunlukSaat <= 0 || gunlukSaat > 24) {
+    alert("Günlük çalışma saati 0–24 arasında olmalı kanka 😄");
+    return;
+  }
 
   const zayiflar = Array.from(
     document.querySelectorAll("#dersler input:checked")
   ).map(cb => cb.value);
 
-  // alan dersleri
   let alanDersleri = [];
   if (alan === "sayisal") {
     alanDersleri = ["Matematik", "Fizik", "Kimya", "Biyoloji"];
@@ -100,22 +115,10 @@ function programOlustur() {
     alanDersleri = ["Türkçe", "Edebiyat", "Tarih", "Coğrafya"];
   }
 
-  // ZAYIF DERSLERİ ZORLA EKLE (alan dışı bile olsa)
+  // alan dışı zayıfları da ekle
   const tumDersler = Array.from(new Set([...alanDersleri, ...zayiflar]));
 
-  // AĞIRLIK
-  const agirlik = {};
-  tumDersler.forEach(d => agirlik[d] = 1);
-  zayiflar.forEach(d => agirlik[d] += 2);
-
-  // GÜNLER
   const gunler = ["Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"];
-
-  // GÜNLÜK SAAT VARYASYONU (sabit ama güzel)
-  const gunSaatleri = gunler.map((_, i) => {
-    const fark = (i % 3 - 1) * 0.5; // -0.5, 0, +0.5
-    return Math.max(2, gunlukSaat + fark);
-  });
 
   let html = `
     <div class="my-12">
@@ -124,13 +127,24 @@ function programOlustur() {
   `;
 
   gunler.forEach((gun, i) => {
-    // aynı gün tekrar yok
+    // her gün 3 farklı ders
     const gunlukDersler = tumDersler
-      .slice(i % tumDersler.length)
-      .concat(tumDersler.slice(0, i % tumDersler.length))
+      .slice(i)
+      .concat(tumDersler.slice(0, i))
       .slice(0, 3);
 
-    const saat = Math.round((gunSaatleri[i] / gunlukDersler.length) * 2) / 2;
+    // temel saat
+    let temelSaat = Math.floor((gunlukSaat / gunlukDersler.length) * 2) / 2;
+    let saatler = gunlukDersler.map(() => temelSaat);
+
+    // fark yarat (+0.5 / -0.5)
+    if (saatler.length >= 2) {
+      saatler[0] += 0.5;
+      saatler[saatler.length - 1] -= 0.5;
+    }
+
+    // güvenlik (0 altına düşmesin)
+    saatler = saatler.map(s => Math.max(0.5, s));
 
     html += `
       <div class="bg-white rounded-lg shadow p-4">
@@ -138,8 +152,8 @@ function programOlustur() {
         <ul class="space-y-1 text-center">
     `;
 
-    gunlukDersler.forEach(d => {
-      html += `<li>${d} – ${saat} saat</li>`;
+    gunlukDersler.forEach((ders, idx) => {
+      html += `<li>${ders} – ${saatler[idx]} saat</li>`;
     });
 
     html += `
