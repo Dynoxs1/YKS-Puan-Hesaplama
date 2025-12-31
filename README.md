@@ -89,7 +89,7 @@ header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;
       const gunlukSaat = Number(document.getElementById("saat").value);
 
       if (isNaN(gunlukSaat) || gunlukSaat <= 0 || gunlukSaat > 24) {
-        alert("Günlük çalışma saati 0–24 arasında olmalı kanka 😄");
+        alert("Günlük çalışma saati 0–24 arasında olmalı");
         return;
       }
 
