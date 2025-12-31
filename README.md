@@ -25,33 +25,33 @@ header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;
 }
 </style>
   <title>Ders Programı Oluşturucu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 p-6">
 
-  <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow">
+<body class="bg-gray-100 p-4 sm:p-6">
+
+  <!-- FORM -->
+  <div class="max-w-3xl mx-auto bg-white p-4 sm:p-6 rounded-lg shadow">
     <h1 class="text-2xl font-bold mb-6 text-center">Ders Programı Oluştur</h1>
-    <!-- Alan seçimi -->
     <label class="block mb-2 font-semibold">Alan</label>
     <select id="alan" class="w-full border p-2 rounded mb-4">
       <option value="sayisal">Sayısal</option>
       <option value="ea">Eşit Ağırlık</option>
       <option value="sozel">Sözel</option>
     </select>
-    <!-- Günlük saat -->
-    <label class="block mb-2 font-semibold">Günlük Çalışma Saati (0–24)</label>
+    <label class="block mb-2 font-semibold">Günlük Ortalama Çalışma Saati (0–24)</label>
     <input
       type="number"
       id="saat"
       min="0"
       max="24"
       step="0.5"
+      placeholder="Örn: 4"
       class="w-full border p-2 rounded mb-4"
-      placeholder="Örn: 3.5"
-    >
-    <!-- Zayıf dersler -->
+    />
     <label class="block mb-2 font-semibold">Zayıf Dersler</label>
-    <div id="dersler" class="grid grid-cols-2 gap-2 mb-6">
+    <div id="dersler" class="grid grid-cols-2 gap-2 mb-6 text-sm">
       <label><input type="checkbox" value="Türkçe"> Türkçe</label>
       <label><input type="checkbox" value="Matematik"> Matematik</label>
       <label><input type="checkbox" value="Fizik"> Fizik</label>
@@ -61,7 +61,6 @@ header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;
       <label><input type="checkbox" value="Coğrafya"> Coğrafya</label>
       <label><input type="checkbox" value="Edebiyat"> Edebiyat</label>
     </div>
-    <!-- Buton -->
     <button
       onclick="programOlustur()"
       class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
@@ -69,9 +68,8 @@ header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;
       Programı Oluştur
     </button>
   </div>
-    <div class="bg-white rounded-lg shadow p-4">
-      <h3 class="font-bold text-lg mb-2 text-center">
-  <!-- Sonuç -->
+
+  <!-- SONUÇ -->
   <div id="sonuc"></div>
 
   <script>
@@ -86,10 +84,10 @@ header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;
 
     function programOlustur() {
       const alan = document.getElementById("alan").value;
-      const gunlukSaat = Number(document.getElementById("saat").value);
+      const ortalamaSaat = Number(document.getElementById("saat").value);
 
-      if (isNaN(gunlukSaat) || gunlukSaat <= 0 || gunlukSaat > 24) {
-        alert("Günlük çalışma saati 0–24 arasında olmalı");
+      if (isNaN(ortalamaSaat) || ortalamaSaat <= 0 || ortalamaSaat > 24) {
+        alert("Günlük çalışma saati 0–24 arasında olmalı kanka 😄");
         return;
       }
 
@@ -109,36 +107,57 @@ header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;
       const tumDersler = Array.from(new Set([...alanDersleri, ...zayiflar]));
       const gunler = ["Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"];
 
+      const sapmalar = [-0.5, 0, 0.5, 0, 0.5, -0.5];
+
+      const dagilimlar = [
+        [1, 1, 0.5],
+        [1.5, 1, 0.5],
+        [2, 1],
+        [1, 1, 1],
+        [2, 1.5],
+        [1.5, 1, 1]
+      ];
+
       let html = `
         <div class="max-w-5xl mx-auto mt-10">
           <h2 class="text-3xl font-bold text-center mb-8">Haftalık Programın</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       `;
 
       gunler.forEach((gun, i) => {
+        let gunlukSaat = Math.max(0.5, ortalamaSaat + sapmalar[i]);
+
+        const dagilim = dagilimlar[i % dagilimlar.length];
+        const oranToplam = dagilim.reduce((a, b) => a + b, 0);
+
+        const dersSayisi = dagilim.length;
+
         const gunlukDersler = tumDersler
           .slice(i)
           .concat(tumDersler.slice(0, i))
-          .slice(0, 3);
+          .slice(0, dersSayisi);
 
-        let temelSaat = Math.floor((gunlukSaat / gunlukDersler.length) * 2) / 2;
-        let saatler = gunlukDersler.map(() => temelSaat);
-
-        if (saatler.length >= 2) {
-          saatler[0] += 0.5;
-          saatler[saatler.length - 1] -= 0.5;
-        }
-
-        saatler = saatler.map(s => Math.max(0.5, s));
+        const saatler = dagilim.map(o =>
+          Math.round((gunlukSaat * o / oranToplam) * 2) / 2
+        );
 
         html += `
-          <div class="bg-white rounded-lg shadow p-4">
-            <h3 class="font-bold text-lg mb-2 text-center">${gun}</h3>
+          <div class="max-w-md mx-auto bg-white rounded-lg shadow p-3 sm:p-4">
+            <h3 class="font-bold text-base sm:text-lg mb-2 text-center leading-tight">
+              ${gun}
+              <div class="text-sm text-gray-500 font-normal">
+                (${saatFormatla(gunlukSaat)})
+              </div>
+            </h3>
             <ul class="space-y-1 text-center">
         `;
 
         gunlukDersler.forEach((ders, idx) => {
-          html += `<li>${ders} – ${saatFormatla(saatler[idx])}</li>`;
+          html += `
+            <li class="text-sm sm:text-base break-words">
+              ${ders} – ${saatFormatla(saatler[idx])}
+            </li>
+          `;
         });
 
         html += `
@@ -151,6 +170,7 @@ header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;
       document.getElementById("sonuc").innerHTML = html;
     }
   </script>
+
 </body>
 </html>
 <!-- İlk Giriş İpucu Balonu -->
