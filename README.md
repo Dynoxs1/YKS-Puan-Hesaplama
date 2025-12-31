@@ -25,79 +25,132 @@ header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;
 }
 </style>
 </head>
-      <title>Otomatik Ders Programı</title>
+  <title>Ders Programı Oluşturucu</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 p-6">
 
-<div class="max-w-4xl mx-auto my-12 p-6 bg-white rounded-xl shadow-lg">
-  <h1 class="text-3xl font-bold text-center mb-6">
-    Otomatik Ders Programı Oluştur
-  </h1>
-
-  <!-- FORM -->
-  <div class="space-y-6">
-    <!-- Alan -->
-    <div>
-      <label class="block font-semibold mb-2">Alan</label>
-      <select id="alan" class="w-full border p-2 rounded">
-        <option value="sayisal">Sayısal</option>
-        <option value="ea">Eşit Ağırlık</option>
-        <option value="sozel">Sözel</option>
-      </select>
-    </div>
-    <!-- Saat -->
-    <div>
-      <label class="block font-semibold mb-2">Günlük Çalışma Saati</label>
-      <input id="saat" type="number" min="1" max="12"
-        class="w-full border p-2 rounded"
-        placeholder="Örn: 4">
-    </div>
-    <!-- Zayıf Dersler -->
-    <div>
-      <label class="block font-semibold mb-2">
-        Zayıf Dersler (birden fazla seçebilirsin)
-      </label>
-      <div id="dersler" class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-        <label><input type="checkbox" value="Matematik"> Matematik</label>
-        <label><input type="checkbox" value="Fizik"> Fizik</label>
-        <label><input type="checkbox" value="Kimya"> Kimya</label>
-        <label><input type="checkbox" value="Biyoloji"> Biyoloji</label>
-        <label><input type="checkbox" value="Türkçe"> Türkçe</label>
-        <label><input type="checkbox" value="Edebiyat"> Edebiyat</label>
-        <label><input type="checkbox" value="Tarih"> Tarih</label>
-        <label><input type="checkbox" value="Coğrafya"> Coğrafya</label>
-      </div>
+  <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow">
+    <h1 class="text-2xl font-bold mb-6 text-center">Ders Programı Oluştur</h1>
+    <!-- Alan seçimi -->
+    <label class="block mb-2 font-semibold">Alan</label>
+    <select id="alan" class="w-full border p-2 rounded mb-4">
+      <option value="sayisal">Sayısal</option>
+      <option value="ea">Eşit Ağırlık</option>
+      <option value="sozel">Sözel</option>
+    </select>
+    <!-- Günlük saat -->
+    <label class="block mb-2 font-semibold">Günlük Çalışma Saati (0–24)</label>
+    <input
+      type="number"
+      id="saat"
+      min="0"
+      max="24"
+      step="0.5"
+      class="w-full border p-2 rounded mb-4"
+      placeholder="Örn: 3.5"
+    >
+    <!-- Zayıf dersler -->
+    <label class="block mb-2 font-semibold">Zayıf Dersler</label>
+    <div id="dersler" class="grid grid-cols-2 gap-2 mb-6">
+      <label><input type="checkbox" value="Türkçe"> Türkçe</label>
+      <label><input type="checkbox" value="Matematik"> Matematik</label>
+      <label><input type="checkbox" value="Fizik"> Fizik</label>
+      <label><input type="checkbox" value="Kimya"> Kimya</label>
+      <label><input type="checkbox" value="Biyoloji"> Biyoloji</label>
+      <label><input type="checkbox" value="Tarih"> Tarih</label>
+      <label><input type="checkbox" value="Coğrafya"> Coğrafya</label>
+      <label><input type="checkbox" value="Edebiyat"> Edebiyat</label>
     </div>
     <!-- Buton -->
-    <button onclick="programOlustur()"
-      class="w-full bg-blue-600 text-white p-3 rounded-lg font-bold hover:bg-blue-700 transition">
+    <button
+      onclick="programOlustur()"
+      class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+    >
       Programı Oluştur
     </button>
   </div>
-</div>
 
-<!-- PROGRAM ÇIKTI -->
-<div id="sonuc" class="max-w-5xl mx-auto px-4"></div>
+  <!-- Sonuç -->
+  <div id="sonuc"></div>
 
-<script>
-function saatFormatla(saat) {
-  const tamSaat = Math.floor(saat);
-  const dakika = (saat - tamSaat) === 0.5 ? 30 : 0;
+  <script>
+    function saatFormatla(saat) {
+      const tam = Math.floor(saat);
+      const dk = (saat - tam) === 0.5 ? 30 : 0;
 
-  if (tamSaat === 0) {
-    return `${dakika} dk`;
-  }
-  if (dakika === 0) {
-    return `${tamSaat} saat`;
-  }
-  return `${tamSaat} saat ${dakika} dk`;
-</script
-function programOlustur() {
-  const alan = document.getElementById("alan").value;
-  const gunlukSaat = Number(document.getElementById("saat").value);
-  }
-</script>
+      if (tam === 0) return `${dk} dk`;
+      if (dk === 0) return `${tam} saat`;
+      return `${tam} saat ${dk} dk`;
+    }
+
+    function programOlustur() {
+      const alan = document.getElementById("alan").value;
+      const gunlukSaat = Number(document.getElementById("saat").value);
+
+      if (isNaN(gunlukSaat) || gunlukSaat <= 0 || gunlukSaat > 24) {
+        alert("Günlük çalışma saati 0–24 arasında olmalı kanka 😄");
+        return;
+      }
+
+      const zayiflar = Array.from(
+        document.querySelectorAll("#dersler input:checked")
+      ).map(cb => cb.value);
+
+      let alanDersleri = [];
+      if (alan === "sayisal") {
+        alanDersleri = ["Matematik", "Fizik", "Kimya", "Biyoloji"];
+      } else if (alan === "ea") {
+        alanDersleri = ["Matematik", "Türkçe", "Edebiyat", "Tarih"];
+      } else {
+        alanDersleri = ["Türkçe", "Edebiyat", "Tarih", "Coğrafya"];
+      }
+
+      const tumDersler = Array.from(new Set([...alanDersleri, ...zayiflar]));
+      const gunler = ["Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"];
+
+      let html = `
+        <div class="max-w-5xl mx-auto mt-10">
+          <h2 class="text-3xl font-bold text-center mb-8">Haftalık Programın</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      `;
+
+      gunler.forEach((gun, i) => {
+        const gunlukDersler = tumDersler
+          .slice(i)
+          .concat(tumDersler.slice(0, i))
+          .slice(0, 3);
+
+        let temelSaat = Math.floor((gunlukSaat / gunlukDersler.length) * 2) / 2;
+        let saatler = gunlukDersler.map(() => temelSaat);
+
+        if (saatler.length >= 2) {
+          saatler[0] += 0.5;
+          saatler[saatler.length - 1] -= 0.5;
+        }
+
+        saatler = saatler.map(s => Math.max(0.5, s));
+
+        html += `
+          <div class="bg-white rounded-lg shadow p-4">
+            <h3 class="font-bold text-lg mb-2 text-center">${gun}</h3>
+            <ul class="space-y-1 text-center">
+        `;
+
+        gunlukDersler.forEach((ders, idx) => {
+          html += `<li>${ders} – ${saatFormatla(saatler[idx])}</li>`;
+        });
+
+        html += `
+            </ul>
+          </div>
+        `;
+      });
+
+      html += `</div></div>`;
+      document.getElementById("sonuc").innerHTML = html;
+    }
+  </script>
 </body>
 </html>
 <!-- İlk Giriş İpucu Balonu -->
