@@ -1,20 +1,180 @@
-<div class="page-container">
-<h1>Hakkımızda</h1>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda - YKS Puan Hesaplama</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Temel Ayarlar */
+        :root {
+            --primary-color: #3b82f6; /* Güven veren mavi tonu */
+            --primary-dark: #1d4ed8;
+            --text-color: #374151;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --accent-bg: #eff6ff;
+            --border-radius: 16px;
+        }
 
-<p>
-YKS Puan Hesaplama, üniversite sınavına hazırlanan adayların
-TYT ve AYT netlerini hızlı ve pratik şekilde hesaplayabilmesi için
-oluşturulmuş ücretsiz bir web sitesidir.
-</p>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<p>
-Amacımız; öğrencilerin doğru–yanlış sayılarını girerek netlerini
-öğrenmelerini, tahmini puanlarını görmelerini ve sınav sürecini
-daha bilinçli şekilde planlamalarını sağlamaktır.
-</p>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            background-image: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-<p>
-Sitemizde yer alan hesaplamalar bilgilendirme amaçlıdır.
-ÖSYM tarafından açıklanan resmi sonuçlarla birebir aynı olmayabilir.
-</p>
-</div>
+        /* Kart Tasarımı */
+        .about-card {
+            background: var(--card-bg);
+            max-width: 800px;
+            width: 100%;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
+                        0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Üstteki dekoratif çizgi */
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+        }
+
+        /* Başlık Alanı */
+        header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .subtitle {
+            display: inline-block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--accent-bg);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+        }
+
+        /* İçerik Alanı */
+        .content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: #4b5563;
+        }
+
+        .content strong {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        /* Misyon Bölümü */
+        .mission-box {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .mission-title {
+            display: block;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Uyarı/Bilgilendirme Kutusu */
+        .disclaimer {
+            background-color: #fffbeb; /* Sarımsı uyarı arka planı */
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin-top: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: #92400e;
+        }
+
+        .disclaimer-icon {
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+
+        /* Mobil Uyumluluk */
+        @media (max-width: 600px) {
+            .about-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <article class="about-card">
+        <header>
+            <span class="subtitle">Biz Kimiz?</span>
+            <h1>Hakkımızda</h1>
+        </header>
+
+        <div class="content">
+            <p>
+                <strong>YKS Puan Hesaplama</strong>, üniversite sınavına hazırlanan adayların TYT ve AYT netlerini hızlı ve pratik şekilde hesaplayabilmesi için oluşturulmuş ücretsiz bir web sitesidir.
+            </p>
+
+            <div class="mission-box">
+                <span class="mission-title">Amacımız</span>
+                <p style="margin-bottom: 0;">
+                    Öğrencilerin doğru–yanlış sayılarını girerek netlerini öğrenmelerini, tahmini puanlarını görmelerini ve sınav sürecini daha bilinçli şekilde planlamalarını sağlamaktır.
+                </p>
+            </div>
+
+            <div class="disclaimer">
+                <span class="disclaimer-icon">⚠️</span>
+                <div>
+                    <strong>Yasal Bilgilendirme:</strong><br>
+                    Sitemizde yer alan hesaplamalar bilgilendirme amaçlıdır. ÖSYM tarafından açıklanan resmi sonuçlarla birebir aynı olmayabilir.
+                </div>
+            </div>
+        </div>
+    </article>
+
+</body>
+</html>
