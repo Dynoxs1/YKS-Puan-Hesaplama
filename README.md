@@ -96,9 +96,8 @@ function saatFormatla(saat) {
 function programOlustur() {
   const alan = document.getElementById("alan").value;
   const gunlukSaat = Number(document.getElementById("saat").value);
-  
+  }
 </script>
-
 </body>
 </html>
 <!-- İlk Giriş İpucu Balonu -->
