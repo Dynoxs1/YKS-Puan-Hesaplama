@@ -1,17 +1,193 @@
-<div class="page-container">
-<h1>İletişim</h1>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - YKS Puan Hesaplama</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Temel Ayarlar (Standart) */
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --text-color: #374151;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --accent-bg: #eff6ff;
+            --border-radius: 16px;
+            --contact-icon-bg: #dbeafe;
+        }
 
-<p>
-Öneri, geri bildirim veya hata bildirimleriniz için bizimle
-iletişime geçebilirsiniz.
-</p>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<p>
-📧 <strong>E-posta:</strong><br>
-<a href="mailto:furkanok61@gmail.com">furkanok61@gmail.com</a>
-</p>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            background-image: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-<p>
-Geri dönüşlerinizi en kısa sürede yanıtlamaya çalışıyoruz.
-</p>
-</div>
+        /* Kart Yapısı */
+        .contact-card {
+            background: var(--card-bg);
+            max-width: 600px; /* İletişim kartı biraz daha kompakt olabilir */
+            width: 100%;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
+                        0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            position: relative;
+            text-align: center; /* İletişim için ortalı hizalama daha şık durur */
+            overflow: hidden;
+        }
+
+        /* Üst Çizgi */
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-color), #9333ea); /* Mordan maviye geçiş */
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .subtitle {
+            display: inline-block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #9333ea; /* İletişim için mor tonu */
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: #f3e8ff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: #4b5563;
+        }
+
+        /* E-posta Kutusu Tasarımı */
+        .email-box {
+            background-color: var(--accent-bg);
+            border: 1px dashed var(--primary-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .email-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+            background-color: #e0e7ff;
+            border-style: solid;
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            color: var(--primary-color);
+        }
+
+        .email-link {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            word-break: break-all; /* Uzun maillerin mobilde taşmasını engeller */
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Alt Not */
+        .note {
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        /* Mobil */
+        @media (max-width: 600px) {
+            .contact-card {
+                padding: 2rem 1.5rem;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+            .email-link {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <article class="contact-card">
+        <header>
+            <span class="subtitle">Bize Ulaşın</span>
+            <h1>İletişim</h1>
+        </header>
+
+        <section>
+            <p>
+                Öneri, geri bildirim veya karşılaştığınız hataları bildirmek için bizimle doğrudan iletişime geçebilirsiniz.
+            </p>
+
+            <div class="email-box">
+                <div class="icon-circle">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div style="font-size: 0.9rem; color: #6b7280; margin-bottom: 0.5rem;">E-posta Adresimiz</div>
+                <a href="mailto:furkanok61@gmail.com" class="email-link">furkanok61@gmail.com</a>
+            </div>
+
+            <p class="note">
+                👋 Geri dönüşlerinizi en kısa sürede yanıtlamaya çalışıyoruz.
+            </p>
+        </section>
+
+    </article>
+
+</body>
+</html>
