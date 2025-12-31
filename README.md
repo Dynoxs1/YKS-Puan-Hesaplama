@@ -71,9 +71,6 @@ header{width:100%;padding:20px;text-align:center;font-size:24px;font-weight:600;
   </div>
     <div class="bg-white rounded-lg shadow p-4">
       <h3 class="font-bold text-lg mb-2 text-center">
-        ${gun} <span class="text-sm text-gray-500">(${saatFormatla(gunlukSaat)})</span>
-      </h3>
-      <ul class="space-y-1 text-center">
   <!-- Sonuç -->
   <div id="sonuc"></div>
 
