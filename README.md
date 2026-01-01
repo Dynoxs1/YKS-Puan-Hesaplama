@@ -133,12 +133,6 @@ function toggleFloatingWidget(){
     setTimeout(()=>{w.style.transform='scale(1)'; w.style.opacity='1';},10);
   }
 }
-
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-<meta charset="UTF-8">
-<style>
     /* Basit Tasarım Ayarları */
     .hesaplama-kutusu {
         border: 1px solid #ddd;
